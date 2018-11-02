@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  2 NOV 2018 11:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  2 NOV 2018 12:36
 entering extended mode
 **./Specyfikacja_funkcjonalna.tex
 (Specyfikacja_funkcjonalna.tex
@@ -643,29 +643,37 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 57.
+<ArbitrageGUI.png, id=9, 237.88875pt x 324.46219pt>
+File: ArbitrageGUI.png Graphic file (type png)
+<use ArbitrageGUI.png>
+Package pdftex.def Info: ArbitrageGUI.png  used on input line 64. on input line
+ 64.
+Package pdftex.def Info: Requested size: 284.52756pt x 388.09514pt on input lin
+e 64.
 
-[1] (Specyfikacja_funkcjonalna.aux) ) 
+[1] [2 <./ArbitrageGUI.png>] (Specyfikacja_funkcjonalna.aux) ) 
 Here is how much of TeX's memory you used:
- 3133 strings out of 493312
- 44541 string characters out of 3130263
- 110380 words of memory out of 3000000
- 6608 multiletter control sequences out of 15000+200000
+ 3139 strings out of 493312
+ 44644 string characters out of 3130263
+ 109380 words of memory out of 3000000
+ 6612 multiletter control sequences out of 15000+200000
  40580 words of font info for 34 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,4n,25p,294b,248s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Hugo/AppData/Local/Programs/MiKT
-eX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Hugo/AppData/Local/Programs/M
-iKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Users/Hugo/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Hugo/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Hugo/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Hugo/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Hugo/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Hugo/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Hugo/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Specyfikacja_funkcjonalna.pdf (2 pages, 148484 bytes).
+{C:/Users/Hugo/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Hugo
+/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Users/Hugo/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Hu
+go/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users
+/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/U
+sers/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:
+/Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><
+C:/Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pf
+b><C:/Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10
+.pfb>
+Output written on Specyfikacja_funkcjonalna.pdf (3 pages, 158821 bytes).
 PDF statistics:
- 39 PDF objects out of 1000 (max. 8388607)
+ 43 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
