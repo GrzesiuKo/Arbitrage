@@ -3,5 +3,5 @@
 \contentsline {section}{\numberline {1}Wst\IeC {\k e}p teoretyczny}{1}
 \contentsline {section}{\numberline {2}Wymagania funkcjonalne}{1}
 \contentsline {section}{\numberline {3}Obs\IeC {\l }uga}{2}
-\contentsline {section}{\numberline {4}Komunikaty o b\IeC {\l }\IeC {\k e}dach}{2}
-\contentsline {section}{\numberline {5}Testy akceptacyjne}{2}
+\contentsline {section}{\numberline {4}Komunikaty o b\IeC {\l }\IeC {\k e}dach}{3}
+\contentsline {section}{\numberline {5}Testy akceptacyjne}{3}
