@@ -1,0 +1,21 @@
+
+0EUR 
+1 GBP funt brytyjski
+2 USD dolar amerykański
+
+0 EUR GBP 
+1 GBP USD 1,2795 PROC 0
+2 EUR  1,1370  0.025
+USD EUR 0,8795 STAŁA 
+
+
+
+
+
+
+
+
+
+
+
+

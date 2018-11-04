@@ -56,6 +56,8 @@ Drugim zadaniem jest wskazanie takiej serii wymiany walut, aby ostatecznie otrzy
 
 Wymiany walut mogą być obarczone opłatą stała lub procentową (od kwoty docelowej).
 
+Kursy i waluty podawane są w pliku o określonym formacie, jednak może zdarzyć się tak, że podany plik, będzie niezgodny ze wzorem.
+
 \noindent\linia
 \section{Wymagania funkcjonalne}
 \begin{itemize}
@@ -81,6 +83,9 @@ Wymiany walut mogą być obarczone opłatą stała lub procentową (od kwoty doc
 
 \includegraphics[width=5cm]{FileChosen}
 \end{enumerate}
+Przykładowy plik wejściowy:
+
+\includegraphics[width= 16cm]{FileFormat}
 
 \item  \textbf{Korzystna wymiana waluty:}
 \begin{enumerate}
@@ -92,7 +97,6 @@ Wymiany walut mogą być obarczone opłatą stała lub procentową (od kwoty doc
 \item Wynik operacji pojawi się w polu tekstowym pod napisem \textit{Result}.
 \end{enumerate}
 \textit{UWAGA! Należy operować na skróconych nazwach podanych w pliku z kursami walut. Wielkość liter ma znaczenie.}
-\newpage
 \item  \textbf{Zarabianie na wymianie walut:}
 \begin{enumerate}
 \item W drugiej sekcji (\textit{Money Increase}) w pole tekstowe na prawo od napisu \textit{Credit} należy podać kwotę, którą dysponujemy.
@@ -118,12 +122,26 @@ W przypadku wystąpienia błędu wyskoczy okno z informacją o błędzie.
 
 \noindent\linia
 \section{Testy akceptacyjne}
+Testy zostaną przeprowadzone manualnie.
+\\
+Prawidłowy plik:
+\\
+\includegraphics[width= 16cm]{FileFormat}
+\\
+Nieprawidłowy plik:
+\\
+\includegraphics[width= 5cm]{FaultyFileFormat}
 
-\begin{itemize}
-\item 
-
-\end{itemize}
-
+\begin{enumerate}
+\item Należy wprowadzić plik niezgodny ze wzorem i wypełnić pole \textit{To} wartością \textit{GBP}, a \textit{From} wartością \textit{USD}. Następnie należy wcisnąć \textit{Calculate} z sekcji \textit{Money Exchange}. Powinno pojawić się okno z komunikatem o błędzie w pliku.
+\item Należy wprowadzić plik niezgodny ze wzorem i wypełnić pole \textit{Credit} wartością 1000, a następnie wcisnąć \textit{Calculate} z sekcji \textit{Money Increase}. Powinno pojawić się okno z komunikatem o błędzie w pliku.
+\item Należy wprowadzić plik zgodny ze wzorem i wypełnić pole \textit{Credit} wartością 1000, a następnie wcisnąć \textit{Calculate} z sekcji \textit{Money Increase}. W polu \textit{Results} powinna pojawić się polecana ścieżka wymiany i przewidywana kwota końcowa:
+\\EUR->GBP->USD
+\\1137,34755
+\item Należy wprowadzić plik zgodny ze wzorem i wypełnić pole \textit{To} wartością \textit{EUR}, a \textit{From} wartością \textit{USD}. Następnie należy wcisnąć\textit{Calculate} z sekcji \textit{Money Exchange}. W polu \textit{Results} powinna pojawić się polecana ścieżka wymiany:
+\\EUR->GBP->USD
+\item Należy podać prawidłowy plik i wypełnić pola \textit{To} i \textit{From} wartościami \textit{PLN} i \textit{LSD}, a następnie wcisnąć \textit{Calculate} z sekcji \textit{Money Exchange}. Powinno pojawić się okno z informacją o nieprawidłowym wypełnieniu pól \textit{To} i \textit{From}.
+\end{enumerate}
 \noindent\linia
 
 \end{document}
