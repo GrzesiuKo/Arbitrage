@@ -1,0 +1,14 @@
+Klikanie użytkownika:
+1. FileChecker sprawdza poprawnośc pliku
+2. File processor pobiera z pliku waluty i dodaje do mapy, następnie pobiera woferty wymianay o dodaje je do walut.
+3. Broker otrzymuje "zamówienie":
+	*Exchange:
+		1. Data manager szuka czy są takie waluty w mapie.
+		2. Financial analyst znajduje najlepszą wymianę:
+			1)Financial analyst ustawia "koszty" dostępu do walut w grafie zaczynając od podanej waluty.
+			2)Financial Analyst zaczynając od waluty wyjściowej "puszcza" po wszystkich gałęziach findWantedCurrency(makePath) (gdy znajdie to nomiantetoBestPath).
+	*EarnByArbitrage
+		1. Data manager szuka czy są takie waluty w mapie.
+		2. Financial analyst znajduje najlepszy arbitrage(wymiana + mozliwość powrotu do waluty wyjściowej).
+		
+4. Wyświetlenie wyników.
