@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  3 NOV 2018 16:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  7 NOV 2018 19:13
 entering extended mode
 **"./Specyfikacja implementacyjna.tex"
 ("Specyfikacja implementacyjna.tex"
@@ -636,26 +636,82 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@toc=\write3
 \openout3 = `"Specyfikacja implementacyjna.toc"'.
 
- [1] ("Specyfikacja implementacyjna.aux") ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--61
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--61
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--97
+
+ []
+
+[1]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 99.
+ ("C:\Users\Hugo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 99.
+
+[2] ("Specyfikacja implementacyjna.aux") ) 
 Here is how much of TeX's memory you used:
- 3116 strings out of 493312
- 44270 string characters out of 3130263
- 109390 words of memory out of 3000000
- 6594 multiletter control sequences out of 15000+200000
- 40580 words of font info for 34 fonts, out of 3000000 for 9000
+ 3135 strings out of 493312
+ 44624 string characters out of 3130263
+ 113390 words of memory out of 3000000
+ 6609 multiletter control sequences out of 15000+200000
+ 44851 words of font info for 35 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,4n,25p,299b,248s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Hugo/AppData/Local/Program
-s/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Users/Hugo/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Hugo/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Hugo/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Hugo/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Hugo/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Hugo/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb>
-Output written on "Specyfikacja implementacyjna.pdf" (2 pages, 144872 bytes).
+ 41i,4n,25p,349b,414s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Hugo/AppData/Local/Programs
+/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Hugo/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Users/Hugo/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Hugo/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Hugo/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Hugo/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Hugo/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Hugo/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Hugo/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Hugo
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb>
+Output written on "Specyfikacja implementacyjna.pdf" (3 pages, 186975 bytes).
 PDF statistics:
- 34 PDF objects out of 1000 (max. 8388607)
+ 46 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

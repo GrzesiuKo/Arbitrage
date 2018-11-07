@@ -1,6 +1,7 @@
-Klikanie użytkownika:
+﻿Klikanie użytkownika:
 1. FileChecker sprawdza poprawnośc pliku
-2. File processor pobiera z pliku waluty i dodaje do mapy, następnie pobiera woferty wymianay o dodaje je do walut.
+2. File processor pobiera dane z pliku.
+	z pliku waluty i dodaje do mapy, następnie pobiera woferty wymianay o 	dodaje je do walut.
 3. Broker otrzymuje "zamówienie":
 	*Exchange:
 		1. Data manager szuka czy są takie waluty w mapie.

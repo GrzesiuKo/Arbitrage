@@ -48,7 +48,63 @@
 \vspace{1cm}
 \noindent\linia
 \section{Opis algorytmu}
+Kluczowym algorytmem pracy tego programu jest algorytm szukający najkorzystniejszych ścieżek po grafie walut (\textit{Currency}) i ofert (\textit{Offer}). W tym przypadku najkorzystniejszą ścieżką jest ta, której koszt jest najmniejszy. W tym celu wykorzystam algorytm Bellmana-Forda.
+\\
+W obiektach \textit{Currency} pola \textit{cost} i \textit{charge} mają mieć takie wartości, które kwotę końcową pozwolą obliczyć według wzoru:
+\\k - kwota początkowa w początkowej walucie
+\\w - kwota końcowa w walucie docelowej
+\\
+\textbf{\emph{w = k/cost - charge}}
+\\
+\\Wartości pól \textit{cost}, \textit{charge} oraz \textit{previous} w obiektach \textit{Currency} sa zainicjowane wartościami \textit{null}.
+\\
 
+
+Algorytm operuje na grafie, w którym węzłami są obiekty \textit{Currency}, a gałęziami obiekty \textit{Offer}, a jego działanie jest następujące:
+\begin{enumerate}
+
+\item Obiekt klasy \textit{Broker} otrzymuje od \textit{GUI} informacje jakie zadanie ma zrealizować i na jakich walutach operować. Są dwa warianty pracy: \textit{wymiana waluty}(patrz 2a.) lub \textit{arbitrage}(patrz 2b.).
+\item
+\begin{enumerate}
+\item Wymiana waluty
+
+\begin{enumerate}
+\item \textit{Broker} zleca \textit{FinancialAnalyst}, aby ustawił koszty odwiedzenia węzłów w grafie zaczynając od podanej przez użytkownika waluty wyjściowej.
+\begin{enumerate}
+\item Z HashMapy \textit{currencies} pobiera Set kluczy, z którego robi tablicę, kluczy.
+\item Zaczynając od węzła początkowego iteruje po tablicy w pętli (jeśli napotka koniec tablicy zaczyna od początku).
+\item Ustawia \textit{cost} i \textit{charge} węzła początkowego na 0.
+\item Ustawia wartości pól \textit{cost} i \textit{charge} w węzłach sąsiadujących z węzłem początkowym według wzorów:
+\\
+\\\textit{newCost} - wartośc pola \textit{cost} w sąsiadującym węźle
+\\ \textit{cost} - wartość pola \textit{cost} w obecnym węźle
+\\ \textit{rate} - wartość pola \textit{rate} w gałęzi \textit{Offer}
+\\ \textit{percent} - wartość pola \textit{percentCharge} w gałęzi \textit{Offer}
+\\
+\\ \textbf{\emph{newCost = cost/rate * (1-percent)}}
+\\
+\\\textit{newCharge} - wartośc pola \textit{charge} w sąsiadującym węźle
+\\ \textit{charge} - wartość pola \textit{charge} w obecnym węźle
+\\ \textit{rate} - wartość pola \textit{rate} w gałęzi \textit{Offer}
+\\ \textit{standingCharge} - wartość pola \textit{standingCharge} w gałęzi \textit{Offer}
+\\
+\\ \textbf{\emph{newCharge = charge/rate + standingCharge }}
+\\
+\\\textbf{Wartość \textit{previous} sąsiadującego węzła ustawiamy na obecny węzeł.}
+\\
+\textbf{\\ UWAGA! Powyższych operacji dokonujemy, jeśli nowa wartość pola \textit{cost} jest mniejsza od poprzedniej.}
+\\
+\item  Następnie przechodzimy do kolejnego obiektu \textit{Currency} w tablicy:
+\begin{itemize}
+\item Jeśli wartość jego pola \textit{cost} wynosi \textit{null} to przechodzimy do kolejnego obiektu w tablicy powtarzając podpunkt E.
+\item Jeśli wartość jego pola \textit{cost} jest różna od \textit{null} to powtarzamy czynności z podpunktów D, a potem E.
+\end{itemize}
+\end{enumerate}
+\item Teraz aby podać najkrótszą droge do waluty z waluty podanej wcześniej wystarczy wejść w walute docelową i prześledzić szlak previous :) warto dodać na początek sprawdzenie na jaką walute ustawiony jest graf, może nie będzie trzeba liczyć.
+\end{enumerate} 
+\item Arbitrage
+\end{enumerate}
+\end{enumerate}
 
 \noindent\linia
 \section{Diagram rozwiązania problemu}
