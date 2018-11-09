@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  7 NOV 2018 16:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  9 NOV 2018 23:11
 entering extended mode
 **./Specyfikacja_funkcjonalna.tex
 (Specyfikacja_funkcjonalna.tex
@@ -449,6 +449,24 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 
 ("C:\Users\Hugo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.c
 fg"))
+("C:\Users\Hugo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lastpage\lastpage.s
+ty"
+Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
+)
+("C:\Users\Hugo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.s
+ty"
+Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip43
+\f@nch@O@elh=\skip44
+\f@nch@O@erh=\skip45
+\f@nch@O@olh=\skip46
+\f@nch@O@orh=\skip47
+\f@nch@O@elf=\skip48
+\f@nch@O@erf=\skip49
+\f@nch@O@olf=\skip50
+\f@nch@O@orf=\skip51
+)
 ("C:\Users\Hugo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.s
 ty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
@@ -475,19 +493,19 @@ File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
 ) (Specyfikacja_funkcjonalna.aux)
 \openout1 = `Specyfikacja_funkcjonalna.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 50.
 
 ("C:\Users\Hugo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -526,6 +544,9 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             https://www.ctan.org/pkg/pageslts
+(lastpage)             ! on input line 50.
 
 ("C:\Users\Hugo\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mki
 i"
@@ -600,34 +621,34 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 45.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 51.
 
 ("C:\Users\Hugo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 45.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 51.
 
 ("C:\Users\Hugo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 45.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 51.
 
 
 ("C:\Users\Hugo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 45.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 51.
 
 
 ("C:\Users\Hugo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 45.
+(Font)              <10.95> on input line 51.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 45.
+(Font)              <8> on input line 51.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 45.
+(Font)              <6> on input line 51.
 
 [1
 
@@ -636,71 +657,87 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@toc=\write3
 \openout3 = `Specyfikacja_funkcjonalna.toc'.
 
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 64.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 73.
 
 ("C:\Users\Hugo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 64.
-<ArbitrageGUI.png, id=9, 233.37187pt x 321.45094pt>
-File: ArbitrageGUI.png Graphic file (type png)
-<use ArbitrageGUI.png>
-Package pdftex.def Info: ArbitrageGUI.png  used on input line 74. on input line
- 74.
-Package pdftex.def Info: Requested size: 233.37129pt x 321.45015pt on input lin
-e 74.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 73.
 
 [1]
+<ArbitrageGUI.png, id=15, 233.37187pt x 321.45094pt>
+File: ArbitrageGUI.png Graphic file (type png)
+<use ArbitrageGUI.png>
+Package pdftex.def Info: ArbitrageGUI.png  used on input line 93. on input line
+ 93.
+Package pdftex.def Info: Requested size: 233.37129pt x 321.45015pt on input lin
+e 93.
 <FileChosen.png, id=16, 168.63pt x 23.33719pt>
 File: FileChosen.png Graphic file (type png)
 <use FileChosen.png>
-Package pdftex.def Info: FileChosen.png  used on input line 84. on input line 8
-4.
+Package pdftex.def Info: FileChosen.png  used on input line 103. on input line 
+103.
 Package pdftex.def Info: Requested size: 142.26378pt x 19.68854pt on input line
- 84.
+ 103.
 <FileFormat.png, id=17, 587.19376pt x 132.495pt>
 File: FileFormat.png Graphic file (type png)
 <use FileFormat.png>
-Package pdftex.def Info: FileFormat.png  used on input line 88. on input line 8
-8.
+Package pdftex.def Info: FileFormat.png  used on input line 107. on input line 
+107.
 Package pdftex.def Info: Requested size: 455.24408pt x 102.72096pt on input lin
-e 88.
+e 107.
  [2 <./ArbitrageGUI.png> <./FileChosen.png> <./FileFormat.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 135--138
+
+ []
+
 File: FileFormat.png Graphic file (type png)
 <use FileFormat.png>
-Package pdftex.def Info: FileFormat.png  used on input line 129. on input line 
-129.
+Package pdftex.def Info: FileFormat.png  used on input line 163. on input line 
+163.
 Package pdftex.def Info: Requested size: 455.24408pt x 102.72096pt on input lin
-e 129.
+e 163.
 <FaultyFileFormat.png, id=21, 178.41656pt x 126.4725pt>
 File: FaultyFileFormat.png Graphic file (type png)
 <use FaultyFileFormat.png>
-Package pdftex.def Info: FaultyFileFormat.png  used on input line 133. on input
- line 133.
+Package pdftex.def Info: FaultyFileFormat.png  used on input line 167. on input
+ line 167.
 Package pdftex.def Info: Requested size: 142.26378pt x 100.85005pt on input lin
-e 133.
- [3 <./FaultyFileFormat.png>] [4] (Specyfikacja_funkcjonalna.aux) ) 
+e 167.
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--168
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--168
+
+ []
+
+[3] 
+AED: lastpage setting LastPage
+[4 <./FaultyFileFormat.png>] (Specyfikacja_funkcjonalna.aux) ) 
 Here is how much of TeX's memory you used:
- 3154 strings out of 493312
- 44941 string characters out of 3130263
- 111387 words of memory out of 3000000
- 6624 multiletter control sequences out of 15000+200000
+ 3329 strings out of 493312
+ 47339 string characters out of 3130263
+ 117180 words of memory out of 3000000
+ 6791 multiletter control sequences out of 15000+200000
  40580 words of font info for 34 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,5n,25p,359b,274s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Hu
-go/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users
-/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Users/
-Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Use
-rs/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/
-Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb>
-<C:/Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pf
-b><C:/Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.
-pfb><C:/Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri
-10.pfb><C:/Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/l
-msy10.pfb>
-Output written on Specyfikacja_funkcjonalna.pdf (5 pages, 199409 bytes).
+ 41i,10n,43p,359b,355s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Hugo/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Hugo
+/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Users/Hugo/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Hu
+go/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users
+/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/U
+sers/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:
+/Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><
+C:/Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pf
+b><C:/Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10
+.pfb>
+Output written on Specyfikacja_funkcjonalna.pdf (5 pages, 203652 bytes).
 PDF statistics:
  52 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

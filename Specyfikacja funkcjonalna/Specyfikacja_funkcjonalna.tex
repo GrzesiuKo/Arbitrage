@@ -6,6 +6,10 @@
 \usepackage{lmodern}
 \selectlanguage{polish}
 \usepackage[top=2cm, bottom=2cm, left=1cm, right=1cm]{geometry}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength\parindent{24pt}
 \makeatletter
 \newcommand{\linia}{\rule{\linewidth}{0.4mm}}
 \renewcommand{\maketitle}{\begin{titlepage}
@@ -40,15 +44,20 @@
 ,,Arbitrage''}
 \usepackage{graphicx}
 
-\begin{document}
+\fancyhf{}
+\rfoot{\thepage{}/\pageref{LastPage}}
 
+\begin{document}
 \maketitle
 
 \tableofcontents
 \vspace{1cm}
 \noindent\linia
 \section{Wstęp teoretyczny}
-Podstawą programu jest analiza podanych kursów walut, pod kątem korzyści z zakupu i sprzedaży.
+
+\qquad Dokument ten dotyczy programu ,,Arbitrage" i ma na celu przedstawić jego funkcje, sposób używania oraz kryteria prawidłowego działania.
+
+Podstawą tego programu jest analiza podanych kursów walut, pod kątem korzyści z zakupu i sprzedaży.
 
 Jednym z zadań jest znalezienie takiej serii wymian waluty wyjściowej, aby jak najkorzystniej dokonać zakupu innej waluty.
 
@@ -61,15 +70,25 @@ Kursy i waluty podawane są w pliku o określonym formacie, jednak może zdarzy�
 \noindent\linia
 \section{Wymagania funkcjonalne}
 \begin{itemize}
-\item Podanie przez użytkownika pliku z kursami walut (w narzuconym przez nas formacie).
-\item Podanie informacji o tym jaką walutą użytkownik dysponuję  i jaką chce kupić. (Korzystny zakup waluty)
-\item Podanie kwoty wyjściowej (bez waluty) jaką użytkownik dysponuje. (Zwiększenie kwoty jaką dysponujemy)
-\item Odczytanie wyników z okna aplikacji.
+\item Znaleźć korzystną ścieżkę wymiany waluty:
+\begin{itemize}
+\item podanie przez użytkownika pliku z kursami walut (w narzuconym przez nas formacie),
+\item podanie informacji o tym jaką walutą użytkownik dysponuję  i jaką chce kupić,
+\item wyświetlenie wyników w oknie aplikacji.
 \end{itemize}
-
+\item Znaleźć dowolny arbitraż:
+\begin{itemize}
+\item podanie przez użytkownika pliku z kursami walut (w narzuconym przez nas formacie),
+\item podanie kwoty wyjściowej (bez waluty) jaką użytkownik dysponuje,
+\item odczytanie wyników z okna aplikacji.
+\end{itemize}
+\end{itemize}
 \noindent\linia
+\newpage
 \section{Obsługa}
+\qquad Poniższe instrukcje przedstawiają bezbłędne przypadki. Informacje o błędach i związanych z nimi komunikatach znajdują się w sekcji \textit{Komunikaty o błędach}.
 
+Graficzny wygląd aplikacji, będzie podobny do przykładu poniżej:
 \begin{center}
 \includegraphics[scale=1]{ArbitrageGUI}
 \end{center}
@@ -99,46 +118,61 @@ Przykładowy plik wejściowy:
 \textit{UWAGA! Należy operować na skróconych nazwach podanych w pliku z kursami walut. Wielkość liter ma znaczenie.}
 \item  \textbf{Zarabianie na wymianie walut:}
 \begin{enumerate}
-\item W drugiej sekcji (\textit{Money Increase}) w pole tekstowe na prawo od napisu \textit{Credit} należy podać kwotę, którą dysponujemy.
+\item W drugiej sekcji (\textit{Money Increase}) w pole tekstowe na prawo od napisu \textit{Credit} należy podać kwotę (liczbę całkowitą dodatnią), którą dysponujemy.
 \item Następnie należy wcisnąć przycisk \textit{Calculate} znajdujący się w sekcji \textit{Money Increase}.
 \item Wynik operacji pojawi się w polu tekstowym pod napisem \textit{Result}.
 \end{enumerate}
 \item\textbf{ Wyniki}
-\begin{itemize}
-\item Przejścia między walutami (ścieżki) będą przedstawione w taki sposób: \emph{EUR->USD->PLN}
+\begin{enumerate}
+\item Przejścia między walutami (ścieżki) będą przedstawione w taki sposób: \emph{EUR->USD->PLN}.
 \\Oznacza to, że euro wymieniliśmy na amerykańskie dolary, a dolary na złotówki.
 \item W ostatniej linii wyniku wyświetlona zostanie spodziewana kwota końcowa.
-\end{itemize}
+\end{enumerate}
 \end{itemize}
 
 \noindent\linia
 \section{Komunikaty o błędach}
-W przypadku wystąpienia błędu wyskoczy okno z informacją o błędzie.
+W przypadku wystąpienia błędu wyskoczy okno z informacją o błędzie. 
+\\\\
+Przykładowe komunikaty wyglądają następująco:
 \begin{itemize}
-\item Błędny plik wejściowy. (pojawi się informacja o tym, w której linii pliku pojawiła się niezgodność z wzorem)
-\item Pola tekstowe będą przystosowane do wpisywania tylko pożądanych wartości. Wpisanie wartości nieprawidłowej będzie niemożliwe.
-\item W przypadku kiedy użytkownik nie wypełnił wszystkich potrzebnych pól, a nacisnął przycisk \textit{Calculate} pojawi się prośba o uzupełnienie pozostałych potrzebnych pól.
+\item podano błędny plik wejściowy:
+
+\textit{Incorrect file. Line 24 is wrong. Compare it with the file pattern.}
+\item nie podano pliku, a naciśnięto przycisk \textit{Calculate}:
+
+\textit{There was no file given.}
+\item nie wypełniono wszystkich potrzebnych pól, a nacisnięto przycisk \textit{Calculate}:
+
+\textit{Fill the missing information.}
+\item podano nieprawidłową wartość w polu \textit{To} lub \textit{From}:
+
+\textit{There is no such currency.}
+\item podano w polu \textit{Credit} wartość, która nie jest liczbą całkowitą dodatnią:
+
+\textit{The given value is not a positive integer.}
 \end{itemize}
+Pola tekstowe \textit{To}, \textit{From} oraz \textit{Credit} będą prawdopodobnie przystosowane do wpisywania tylko pożądanych wartości. Wtedy komunikaty o błędnym wypełnieniu tych pól nie będą się pojawiać.
 
 \noindent\linia
 \section{Testy akceptacyjne}
 Testy zostaną przeprowadzone manualnie.
-\\
+\\\\
 Prawidłowy plik:
 \\
 \includegraphics[width= 16cm]{FileFormat}
-\\
+\\\\
 Nieprawidłowy plik:
 \\
 \includegraphics[width= 5cm]{FaultyFileFormat}
 
 \begin{enumerate}
-\item Należy wprowadzić plik niezgodny ze wzorem i wypełnić pole \textit{To} wartością \textit{GBP}, a \textit{From} wartością \textit{USD}. Następnie należy wcisnąć \textit{Calculate} z sekcji \textit{Money Exchange}. Powinno pojawić się okno z komunikatem o błędzie w pliku.
-\item Należy wprowadzić plik niezgodny ze wzorem i wypełnić pole \textit{Credit} wartością 1000, a następnie wcisnąć \textit{Calculate} z sekcji \textit{Money Increase}. Powinno pojawić się okno z komunikatem o błędzie w pliku.
-\item Należy wprowadzić plik zgodny ze wzorem i wypełnić pole \textit{Credit} wartością 1000, a następnie wcisnąć \textit{Calculate} z sekcji \textit{Money Increase}. W polu \textit{Results} powinna pojawić się polecana ścieżka wymiany i przewidywana kwota końcowa:
+\item Należy wprowadzić nieprawidłowy plik i wypełnić pole \textit{To} wartością \textit{GBP}, a \textit{From} wartością \textit{USD}. Następnie należy wcisnąć \textit{Calculate} z sekcji \textit{Money Exchange}. Powinno pojawić się okno z komunikatem o błędzie w pliku.
+\item Należy wprowadzić nieprawidłowy plik i wypełnić pole \textit{Credit} wartością 1000, a następnie wcisnąć \textit{Calculate} z sekcji \textit{Money Increase}. Powinno pojawić się okno z komunikatem o błędzie w pliku.
+\item Należy wprowadzić prawidłowy plik i wypełnić pole \textit{Credit} wartością 1000, a następnie wcisnąć \textit{Calculate} z sekcji \textit{Money Increase}. W polu \textit{Results} powinna pojawić się polecana ścieżka wymiany i przewidywana kwota końcowa:
 \\EUR->GBP->USD->EUR
 \\1000,297170225
-\item Należy wprowadzić plik zgodny ze wzorem i wypełnić pole \textit{To} wartością \textit{EUR}, a \textit{From} wartością \textit{USD}. Następnie należy wcisnąć\textit{Calculate} z sekcji \textit{Money Exchange}. W polu \textit{Results} powinna pojawić się polecana ścieżka wymiany:
+\item Należy wprowadzić prawidłowy plik i wypełnić pole \textit{To} wartością \textit{EUR}, a \textit{From} wartością \textit{USD}. Następnie należy wcisnąć\textit{Calculate} z sekcji \textit{Money Exchange}. W polu \textit{Results} powinna pojawić się polecana ścieżka wymiany:
 \\EUR->GBP->USD
 \item Należy podać prawidłowy plik i wypełnić pola \textit{To} i \textit{From} wartościami \textit{PLN} i \textit{LSD}, a następnie wcisnąć \textit{Calculate} z sekcji \textit{Money Exchange}. Powinno pojawić się okno z informacją o nieprawidłowym wypełnieniu pól \textit{To} i \textit{From}.
 \end{enumerate}

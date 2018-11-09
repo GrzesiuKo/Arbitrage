@@ -47,10 +47,15 @@
 \tableofcontents
 \vspace{1cm}
 \noindent\linia
+\section{Diagram klas}
+
+\includegraphics[width = 18cm]{DiagramKlas}
+
+\noindent\linia
 \section{Opis algorytmu}
 Kluczowym algorytmem pracy tego programu jest algorytm szukający najkorzystniejszych ścieżek po grafie walut (\textit{Currency}) i ofert (\textit{Offer}). W tym przypadku najkorzystniejszą ścieżką jest ta, której koszt jest najmniejszy. W tym celu wykorzystam algorytm Bellmana-Forda.
-\\
-W obiektach \textit{Currency} pola \textit{cost} i \textit{charge} mają mieć takie wartości, które kwotę końcową pozwolą obliczyć według wzoru:
+\\\\
+Głównym celem jest, aby po skończonej pracy algorytmu w obiektach \textit{Currency} pola \textit{cost} i \textit{charge} miały takie wartości, które kwotę końcową w walucie docelowej pozwolą obliczyć według wzoru:
 \\k - kwota początkowa w początkowej walucie
 \\w - kwota końcowa w walucie docelowej
 \\
@@ -76,6 +81,7 @@ Algorytm operuje na grafie, w którym węzłami są obiekty \textit{Currency}, a
 \item Ustawia \textit{cost} i \textit{charge} węzła początkowego na 0.
 \item Ustawia wartości pól \textit{cost} i \textit{charge} w węzłach sąsiadujących z węzłem początkowym według wzorów:
 \\
+\\\textbf{Cost:}
 \\\textit{newCost} - wartośc pola \textit{cost} w sąsiadującym węźle
 \\ \textit{cost} - wartość pola \textit{cost} w obecnym węźle
 \\ \textit{rate} - wartość pola \textit{rate} w gałęzi \textit{Offer}
@@ -83,6 +89,10 @@ Algorytm operuje na grafie, w którym węzłami są obiekty \textit{Currency}, a
 \\
 \\ \textbf{\emph{newCost = cost/rate * (1-percent)}}
 \\
+\textbf{\\ UWAGA! Jeśli wartość \textit{cost} wynosi zero to:}
+\\ \textbf{\emph{newCost = rate * (1-percent)}}
+\\
+\\\textbf{Charge:}
 \\\textit{newCharge} - wartośc pola \textit{charge} w sąsiadującym węźle
 \\ \textit{charge} - wartość pola \textit{charge} w obecnym węźle
 \\ \textit{rate} - wartość pola \textit{rate} w gałęzi \textit{Offer}
@@ -100,7 +110,7 @@ Algorytm operuje na grafie, w którym węzłami są obiekty \textit{Currency}, a
 \item Jeśli wartość jego pola \textit{cost} jest różna od \textit{null} to powtarzamy czynności z podpunktów D, a potem E.
 \end{itemize}
 \end{enumerate}
-\item Teraz aby podać najkrótszą droge do waluty z waluty podanej wcześniej wystarczy wejść w walute docelową i prześledzić szlak previous :) warto dodać na początek sprawdzenie na jaką walute ustawiony jest graf, może nie będzie trzeba liczyć.
+\item Teraz aby podać najkrótszą drogę do waluty z waluty podanej wcześniej wystarczy wejść w walutę docelową i prześledzić szlak previous :) warto dodać na początek sprawdzenie na jaką walutę ustawiony jest graf, może nie będzie trzeba liczyć.
 \end{enumerate} 
 \item Arbitrage
 \end{enumerate}
@@ -111,12 +121,26 @@ Algorytm operuje na grafie, w którym węzłami są obiekty \textit{Currency}, a
 
 
 \noindent\linia
-\section{Diagram klas}
-
+\section{Opis ważniejszych metod}
+\begin{itemize}
+\item boolean \textbf{establishCosts}(waluta początkowa)
+\\\\
+Metoda ustawia w węzłach (Currencies) koszt dotarcia do tego węzła, wyruszając z węzła waluty początkowej. Działa według algorytmu Bellmana-Forda.
+Dodatkowo w każdym węźle zostawia informacje, która waluta jako ostatnia zaktualizowała koszt w danym węźle.
+\end{itemize}
 
 \noindent\linia
-\section{Testy}
 
+\section{Testy}
+\begin{itemize}
+\item \textbf{establishCosts}()
+\begin{itemize}
+\item Metoda dostaje walutę, której nie ma w Mapie. Powinna zwrócić \textit{false}.
+\item Metoda dostaje \textit{null}. Powinna zwrócić \textit{false}.
+\item Metoda dostaje walutę, która nie ma, żadnego połączenia z innymi. Powinna zwrócić true, a jej pola charge i cost powinny zawierać wartość zero.
+\item Metoda dostaje walutę, która ma połączenia z trzema innymi walutami. Powinna zwrócić true i zmienić zawartości pól tych walut.
+\end{itemize}
+\end{itemize}
 
 \noindent\linia
 \section{Informacje o sprzęcie i oprogramowaniu}
