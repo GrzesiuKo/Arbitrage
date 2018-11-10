@@ -1,8 +1,11 @@
 \select@language {polish}
 \select@language {polish}
-\contentsline {section}{\numberline {1}Diagram klas}{1}
-\contentsline {section}{\numberline {2}Opis algorytmu}{1}
-\contentsline {section}{\numberline {3}Diagram rozwi\IeC {\k a}zania problemu}{3}
-\contentsline {section}{\numberline {4}Opis wa\IeC {\.z}niejszych metod}{3}
-\contentsline {section}{\numberline {5}Testy}{3}
-\contentsline {section}{\numberline {6}Informacje o sprz\IeC {\k e}cie i oprogramowaniu}{3}
+\contentsline {section}{\numberline {1}Wst\IeC {\k e}p teoretyczny}{1}
+\contentsline {section}{\numberline {2}Diagram klas}{1}
+\contentsline {section}{\numberline {3}Opis algorytmu}{2}
+\contentsline {subsection}{\numberline {3.1}Wczytanie danych}{2}
+\contentsline {subsection}{\numberline {3.2}Koszt \IeC {\'s}cie\IeC {\.z}ki}{2}
+\contentsline {section}{\numberline {4}Diagram rozwi\IeC {\k a}zania problemu}{3}
+\contentsline {section}{\numberline {5}Opis wa\IeC {\.z}niejszych metod}{3}
+\contentsline {section}{\numberline {6}Testy}{4}
+\contentsline {section}{\numberline {7}Informacje o sprz\IeC {\k e}cie i oprogramowaniu}{4}

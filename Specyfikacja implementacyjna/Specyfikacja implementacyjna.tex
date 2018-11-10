@@ -1,11 +1,15 @@
 \documentclass[a4paper,11pt]{article}
-
+\usepackage{indentfirst}
+\setlength\parindent{24pt}
 \usepackage[T1]{fontenc}
 \usepackage[polish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \selectlanguage{polish}
 \usepackage[top=2cm, bottom=2cm, left=1cm, right=1cm]{geometry}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 \makeatletter
 \newcommand{\linia}{\rule{\linewidth}{0.4mm}}
 \renewcommand{\maketitle}{\begin{titlepage}
@@ -39,7 +43,8 @@
 \title{Specyfikacja Implementacyjna \\
 ,,Arbitrage''}
 \usepackage{graphicx}
-
+\fancyhf{}
+\rfoot{\thepage{}/\pageref{LastPage}}
 \begin{document}
 
 \maketitle
@@ -47,14 +52,48 @@
 \tableofcontents
 \vspace{1cm}
 \noindent\linia
-\section{Diagram klas}
 
-\includegraphics[width = 18cm]{DiagramKlas}
+\section{Wstęp teoretyczny}
+Dokument ten dotyczy implementacji programu ,,Arbitrage". Został przygotowany w celu przedstawienia pomysłu na algorytm realizujący znajdowanie korzystnej ścieżki wymiany walut oraz dowolnego arbitrażu. Ponadto dokument informuje o technologiach, w których program będzie zrealizowany, testach jakie powinny zostać przeprowadzone oraz sprzęcie, na którym zostanie wykonany i uruchomiony.
+\section{Diagram klas}
+\begin{center}
+\includegraphics[width = 19cm]{DiagramKlas}
+\end{center}
 
 \noindent\linia
 \section{Opis algorytmu}
-Kluczowym algorytmem pracy tego programu jest algorytm szukający najkorzystniejszych ścieżek po grafie walut (\textit{Currency}) i ofert (\textit{Offer}). W tym przypadku najkorzystniejszą ścieżką jest ta, której koszt jest najmniejszy. W tym celu wykorzystam algorytm Bellmana-Forda.
-\\\\
+
+\subsection{Wczytanie danych}
+
+Dane wczytywane będą z pliku tekstowego, wykonanego według wzoru podanym w specyfikacji funkcjonalnej. Plik ten będzie zawierał definicje walut oraz kursy ich wymiany. Na początku zostanie sprawdzony pod kątem zgodności ze wzorem. Jeśli plik będzie wadliwy, algorytm przerwie swoje działanie, a w przeciwnym wypadku będzie kontynuował prace.
+
+Algorytm umieści wszystkie zdefiniowane skrócone nazwy walut w \textit{HashMapie} jako obiekty \textit{Currency}. Dodatkowo każdy obiekt \textit{Currency}, będzie zawierał \textit{Liste} obiektów klasy \textit{Offer}, w których zawarte będą informacje o kosztach i kursie wymiany na inną walutę.
+
+Przykład:
+\begin{center}
+\includegraphics[width = 5cm]{Przyklad}
+\end{center}
+
+Obiekt \textit{Currency} reprezentujący walutę \textit{EUR}, będzie zawierał \textit{Liste}, w której będzie obiekt \textit{Offer}.
+\\Obiekt \textit{Offer} będzie zawierał:
+\begin{itemize}
+\item referencję do obiektu \textit{Currency} reprezentującego \textit{USD},
+\item informację o kursie wymiany \textit{EUR} na \textit{USD} równym 1.13,
+\item informacje o opłacie stałej równej 1,
+\item informacje o opłacie procentowej równej 0 (bo jej nie ma w tym przypadku).
+\end{itemize} 
+
+Dla innego zestawu danych na tej \textit{Liście} może pojawić się więcej obiektów \textit{Offer} zawierających informacje o wymianie \textit{EUR} na inne waluty.
+
+W ten sposób obiekty \textit{Currency} i ich \textit{Listy} obiektów \textit{Offer} utworzą graf albo wiele grafów w zależności od danych wejściowych i możliwości wymian między walutami.
+
+\subsection{Koszt ścieżki}
+Kluczowym zadaniem algorytmu, będzie znajdowanie najkorzystniejszych ścieżek po grafie walut. W celu określenia
+\begin{center}
+\includegraphics[width = 5cm]{Przyklad}
+\end{center}
+
+Koszt dotarcia do danego węzła od wybranego węzła początkowego, będzie przechowywany
 Głównym celem jest, aby po skończonej pracy algorytmu w obiektach \textit{Currency} pola \textit{cost} i \textit{charge} miały takie wartości, które kwotę końcową w walucie docelowej pozwolą obliczyć według wzoru:
 \\k - kwota początkowa w początkowej walucie
 \\w - kwota końcowa w walucie docelowej
