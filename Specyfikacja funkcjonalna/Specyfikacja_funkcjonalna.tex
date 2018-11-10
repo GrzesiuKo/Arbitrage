@@ -106,7 +106,7 @@ Przykładowy plik wejściowy:
 
 \includegraphics[width= 16cm]{FileFormat}
 
-\item  \textbf{Korzystna wymiana waluty:}
+\item  \textbf{Znajdowanie korzystnej ścieżki wymiany waluty:}
 \begin{enumerate}
 \item W pierwszej sekcji (\textit{Money Exchange}) w pole tekstowe na prawo od napisu \textit{From} należy podać skróconą nazwę waluty, za którą chcemy dokonać zakupu.
 \\ Po tej operacji w kwadracie po lewej stronie pola tekstowego pojawi się znaczek potwierdzający podanie skróconej nazwy waluty.
@@ -116,7 +116,7 @@ Przykładowy plik wejściowy:
 \item Wynik operacji pojawi się w polu tekstowym pod napisem \textit{Result}.
 \end{enumerate}
 \textit{UWAGA! Należy operować na skróconych nazwach podanych w pliku z kursami walut. Wielkość liter ma znaczenie.}
-\item  \textbf{Zarabianie na wymianie walut:}
+\item  \textbf{Znajdowanie dowolnego arbitrażu:}
 \begin{enumerate}
 \item W drugiej sekcji (\textit{Money Increase}) w pole tekstowe na prawo od napisu \textit{Credit} należy podać kwotę (liczbę całkowitą dodatnią), którą dysponujemy.
 \item Następnie należy wcisnąć przycisk \textit{Calculate} znajdujący się w sekcji \textit{Money Increase}.
@@ -132,7 +132,7 @@ Przykładowy plik wejściowy:
 
 \noindent\linia
 \section{Komunikaty o błędach}
-W przypadku wystąpienia błędu wyskoczy okno z informacją o błędzie. 
+W przypadku wystąpienia błędu, w sekcji \textit{Result} pojawi się komunikat z informacją o błędzie. 
 \\\\
 Przykładowe komunikaty wyglądają następująco:
 \begin{itemize}
@@ -171,7 +171,7 @@ Nieprawidłowy plik:
 \item Należy wprowadzić nieprawidłowy plik i wypełnić pole \textit{Credit} wartością 1000, a następnie wcisnąć \textit{Calculate} z sekcji \textit{Money Increase}. Powinno pojawić się okno z komunikatem o błędzie w pliku.
 \item Należy wprowadzić prawidłowy plik i wypełnić pole \textit{Credit} wartością 1000, a następnie wcisnąć \textit{Calculate} z sekcji \textit{Money Increase}. W polu \textit{Results} powinna pojawić się polecana ścieżka wymiany i przewidywana kwota końcowa:
 \\EUR->GBP->USD->EUR
-\\1000,297170225
+\\1000,29
 \item Należy wprowadzić prawidłowy plik i wypełnić pole \textit{To} wartością \textit{EUR}, a \textit{From} wartością \textit{USD}. Następnie należy wcisnąć\textit{Calculate} z sekcji \textit{Money Exchange}. W polu \textit{Results} powinna pojawić się polecana ścieżka wymiany:
 \\EUR->GBP->USD
 \item Należy podać prawidłowy plik i wypełnić pola \textit{To} i \textit{From} wartościami \textit{PLN} i \textit{LSD}, a następnie wcisnąć \textit{Calculate} z sekcji \textit{Money Exchange}. Powinno pojawić się okno z informacją o nieprawidłowym wypełnieniu pól \textit{To} i \textit{From}.
