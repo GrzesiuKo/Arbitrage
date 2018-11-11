@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  10 NOV 2018 14:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  11 NOV 2018 04:24
 entering extended mode
 **"./Specyfikacja implementacyjna.tex"
 ("Specyfikacja implementacyjna.tex"
@@ -661,114 +661,79 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@toc=\write3
 \openout3 = `"Specyfikacja implementacyjna.toc"'.
 
-<DiagramKlas.png, id=9, 831.85782pt x 421.575pt>
+<DiagramKlas.png, id=9, 922.19531pt x 524.71031pt>
 File: DiagramKlas.png Graphic file (type png)
 <use DiagramKlas.png>
 Package pdftex.def Info: DiagramKlas.png  used on input line 60. on input line 
 60.
-Package pdftex.def Info: Requested size: 540.60236pt x 273.9819pt on input line
- 60.
- [1 <./DiagramKlas.png>]
+Package pdftex.def Info: Requested size: 540.60236pt x 307.59079pt on input lin
+e 60.
+ [1]
 <Przyklad.png, id=15, 285.31593pt x 68.50594pt>
 File: Przyklad.png Graphic file (type png)
 <use Przyklad.png>
-Package pdftex.def Info: Przyklad.png  used on input line 74. on input line 74.
+Package pdftex.def Info: Przyklad.png  used on input line 73. on input line 73.
 
 Package pdftex.def Info: Requested size: 142.26378pt x 34.15775pt on input line
- 74.
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 80.
+ 73.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 79.
 
 ("C:\Users\Hugo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 80.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 79.
+
+[2 <./DiagramKlas.png> <./Przyklad.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 92--95
+
+ []
+
 File: Przyklad.png Graphic file (type png)
 <use Przyklad.png>
-Package pdftex.def Info: Przyklad.png  used on input line 93. on input line 93.
-
+Package pdftex.def Info: Przyklad.png  used on input line 102. on input line 10
+2.
 Package pdftex.def Info: Requested size: 142.26378pt x 34.15775pt on input line
- 93.
-
-Underfull \hbox (badness 10000) in paragraph at lines 96--105
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 96--105
-
- []
-
-[2 <./Przyklad.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 121--146
+ 102.
+[3] [4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 228--231
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--146
+Underfull \hbox (badness 10000) in paragraph at lines 231--234
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--146
+Underfull \hbox (badness 10000) in paragraph at lines 234--237
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 121--146
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 121--146
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 121--146
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 121--146
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 121--146
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 165--169
-
- []
-
-[3] 
+[6] 
 AED: lastpage setting LastPage
-[4] ("Specyfikacja implementacyjna.aux") ) 
+[7] ("Specyfikacja implementacyjna.aux") ) 
 Here is how much of TeX's memory you used:
  3330 strings out of 493312
  47519 string characters out of 3130263
- 117243 words of memory out of 3000000
- 6789 multiletter control sequences out of 15000+200000
- 50848 words of font info for 37 fonts, out of 3000000 for 9000
+ 119243 words of memory out of 3000000
+ 6790 multiletter control sequences out of 15000+200000
+ 46577 words of font info for 36 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,43p,458b,487s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,11n,43p,685b,414s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Hugo/AppData/Local/Programs
-/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Hugo/AppData/Local/Programs/
-MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}<C:/Users/Hugo/AppData/Local/Progra
+/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Hugo/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Users/Hugo/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Hugo/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Hugo/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Hugo/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Hugo/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Hugo/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Hugo/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Hugo
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb>
-Output written on "Specyfikacja implementacyjna.pdf" (5 pages, 251203 bytes).
+Programs/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Hugo/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Hugo/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Hugo/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Hugo/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb>
+Output written on "Specyfikacja implementacyjna.pdf" (8 pages, 258815 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
+ 61 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
