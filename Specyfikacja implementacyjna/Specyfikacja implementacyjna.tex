@@ -82,7 +82,7 @@ Obiekt \textit{Currency} reprezentujący walutę \textit{EUR}, będzie zawierał
 \item informacje o opłacie procentowej równej 0 (bo jej nie ma w tym przypadku).
 \end{itemize} 
 
-Dla innego zestawu danych na tej \textit{Liście} może pojawić się więcej obiektów \textit{Offer} zawierających informacje o wymianie \textit{EUR} na inne waluty.
+Dla innego zestawu danych na tej \textit{Liście} może pojawić się więcej obiektów \textit{Offer} zawierających informacje o~wymianie \textit{EUR} na inne waluty.
 
 W ten sposób obiekty \textit{Currency} i ich \textit{Listy} obiektów \textit{Offer} utworzą graf albo wiele grafów w zależności od danych wejściowych i możliwości wymian między walutami.
 
@@ -221,36 +221,89 @@ Napis zawierający cała ścieżkę tworzy się dzięki przechodzenie grafu szla
 
 Po tych operacjach należy pobierając ze stosu nazwy walut stworzyć napis reprezentujący korzystną ścieżkę wymiany walut lub arbitraż.
 Do realizacji tego zadania przeznaczona jest klasa \textit{Path}, która będzie zawierać potrzebne metody, a także będzie zwracana przez metody odpowiedzialne za znajdowanie korzystnej ścieżki wymiany waluty oraz znajdowanie dowolnego arbitrażu.
+Uzyskana ścieżka nie może być krótsza niż dwa węzły.
+
+Ścieżka wyświetlana będzie zgodnie ze specyfikacja funkcjonalną.
 
 \noindent\linia
 \section{Opis ważniejszych metod}
 \begin{itemize}
-\item Path \textbf{findExchange}(waluta początkowa, waluta docelowa)
+\item Path \textbf{findExchange}( waluta początkowa, waluta docelowa)
 \\\\
 Metoda wykonuje działania opisane w części 3.3.1 tego dokumentu.
-\item Path \textbf{findArbitrage}(kwota)
+\item Path \textbf{findArbitrage}( kwota)
 \\\\
 Metoda wykonuje działania opisane w części 3.3.2 tego dokumentu.
-\item String makePath(stos walut)
+\item String \textbf{makePath}( stos walut)
 \\\\
 Metoda wykonuje działania opisane w ostatnim akapicie części 3.3.3 tego dokumentu.
+\item String \textbf{checkCurrencyLine}( linia tekstu)
+\\\\
+Metoda sprawdza czy otrzymana linia jest zgodna ze wzorem. W tym przypadku czy jest to linia przedstawiająca definicje waluty w pliku.
+
+Podobnie działają pozostałe metody z klasy \textit{FileChecker}.
+\item String \textbf{addCurrency}( linia tekstu)
+\\\\
+Metoda, na podstawie linii tekstu z pliku, dodaje do \textit{HashMapy} walutę.
+\item String \textbf{addOffer}(  linia tekstu)
+\\\\
+Metoda, na podstawie linii tekstu z pliku, dodaje do \textit{ArrayListy}, w obiekcie \textit{Currency} reprezentującym odpowiednią walutę, informacje, zawartą w obiekcie  \textit{Offer}, o możliwości wymiany tej waluty na inną.
+
 \end{itemize}
 
 \noindent\linia
 
 \section{Testy}
 \begin{itemize}
-\item \textbf{establishCosts}()
+\item Path \textbf{findExchange}( waluta początkowa, waluta docelowa)
 \begin{itemize}
-\item Metoda dostaje walutę, której nie ma w Mapie. Powinna zwrócić \textit{false}.
-\item Metoda dostaje \textit{null}. Powinna zwrócić \textit{false}.
-\item Metoda dostaje walutę, która nie ma, żadnego połączenia z innymi. Powinna zwrócić true, a jej pola charge i cost powinny zawierać wartość zero.
-\item Metoda dostaje walutę, która ma połączenia z trzema innymi walutami. Powinna zwrócić true i zmienić zawartości pól tych walut.
+\item Jedna z podanych walut nie istnieje (nie ma jej wśród danych),
+\item nie istnieje ścieżka pomiędzy tymi walutami,
+\item jedną z podanych wartości jest \textit{null},
+\item istnieją obie podane waluty,
+\item istnieje ścieżka między podanymi walutami.
+\end{itemize}
+\item Path \textbf{findArbitrage}( kwota)
+\begin{itemize}
+\item Kwota jest ujemna,
+\item kwota jest równa zero,
+\item nie istnieje możliwość arbitrażu,
+\item istnieje możliwość arbitrażu.
+\end{itemize}
+\item String \textbf{makePath}( stos walut)
+\begin{itemize}
+\item Podano \textit{null},
+\item na stosie nic nie ma,
+\item na stosie jest jedna waluta,
+\item na stosie są dwie waluty.
+\end{itemize}
+\item String \textbf{checkCurrencyLine}( linia tekstu)
+\begin{itemize}
+\item Podano \textit{null},
+\item podano linię tekstu zgodną ze wzorem,
+\item podano linię tekstu niezgodną ze wzorem.
+\end{itemize}
+\item String \textbf{addCurrency}( linia tekstu)
+\begin{itemize}
+\item Podano \textit{null},
+\item podano linię tekstu zgodną ze wzorem,
+\item podano linię tekstu niezgodną ze wzorem,
+\item już jest taka waluta w \textit{HashMapie},
+\item jeszcze nie ma takiej waluty w \textit{HashMapie}.
+\end{itemize}
+\item String \textbf{addOffer}(  linia tekstu)
+\begin{itemize}
+\item Podano \textit{null},
+\item podano linię tekstu zgodną ze wzorem,
+\item podano linię tekstu niezgodną ze wzorem,
+\item już jest taka oferta w \textit{Liście},
+\item jeszcze nie ma takiej oferty w \textit{Liście}.
 \end{itemize}
 \end{itemize}
 
 \noindent\linia
 \section{Informacje o sprzęcie i oprogramowaniu}
+Program będzie pisany w języku JAVA ( wersja 9.0.4) z wykorzystaniem JavaFX. Zostanie przetestowany na komputerze Lenovo G510 o procesorze Intel Core i5 2.5GHz, pamięci RAM 6GB, karcie graficznej AMD Radeon HD 8570M i~systemie operacyjnym Windows 10.
 
 \noindent\linia
 
