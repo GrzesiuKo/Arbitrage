@@ -1,3 +1,5 @@
 1. zmiana nazwy z calculateProfitPath na calculateArbitrage
 2. zmiana nazwy klasy z GUI na Main
 3. zmiana nazwy z calculateExchangePath na calculateExchange
+4. Po³¹czê file processor i file checker aby dwa razy ca³ego pliku nie przechodziæ
+5. check offer line zamiast check rate line
