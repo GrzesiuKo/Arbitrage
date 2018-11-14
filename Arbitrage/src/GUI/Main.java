@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+    private Controller controller;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -18,7 +19,7 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.show();
 
-        Controller controller = loader.getController();
+        controller = loader.getController();
         controller.setStage(primaryStage);
     }
 

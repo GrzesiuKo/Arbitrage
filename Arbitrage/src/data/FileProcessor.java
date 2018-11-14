@@ -4,10 +4,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class FileProcessor {
     Map<String, Currency> currencies;
-    private int currentLineNumber = -1;
+    private int currentLineNumber = 0;
     int currentFilePart = 0;
 
 
@@ -28,23 +29,28 @@ public class FileProcessor {
             return false;
         }
 
-        while (result != false && scanner.hasNext()) {
-            currentLine = scanner.nextLine();
-            currentLineNumber++;
-            result = checkLine(currentLine, currentLineNumber);
+        if (scanner.hasNextLine()) {
+            while (result != false && scanner.hasNextLine()) {
+                currentLine = scanner.nextLine();
+                currentLineNumber++;
+                result = checkLine(currentLine, currentLineNumber);
+            }
+        } else {
+            result = false;
         }
 
-        return false;
+        return result;
     }
 
     private boolean checkLine(String line, int lineNumber) {
-        boolean result = true;
+        boolean result;
 
-        if (lineNumber == 0) {
-            result = line.contains("#");
+        if (lineNumber == 1) {
+            result = line.startsWith("#");
 
-        } else if (line.contains("#")) {
+        } else if (line.startsWith("#")) {
             currentFilePart++;
+            result = true;
 
         } else if (lineNumber > 0 && currentFilePart == 0) {
             result = checkCurrencyLine(line);
@@ -68,13 +74,29 @@ public class FileProcessor {
     }
 
     private boolean checkCurrencyLine(String line) {
-        boolean result = true;
+        boolean result;
+        Scanner scanner;
+        Pattern currencyLine;
+
+        scanner = new Scanner(line);
+        scanner.useDelimiter(Pattern.compile("$"));
+        currencyLine = Pattern.compile("(\\d)+\\s[A-Z]{3}.*");
+
+        result = scanner.hasNext(currencyLine);
 
         return result;
     }
 
     private boolean checkOfferLine(String line) {
-        boolean result = true;
+        boolean result;
+        Scanner scanner;
+        Pattern offerLine;
+
+        scanner = new Scanner(line);
+        scanner.useDelimiter(Pattern.compile("$"));
+        offerLine = Pattern.compile("(\\d)+\\s[A-Z]{3}\\s[A-Z]{3}\\s(\\d+)((,|.){1}(\\d+))?\\s(PROC|STAŁA)\\s\\d+((,|.){1}(\\d+))?\\s*");
+
+        result = scanner.hasNext(offerLine);
 
         return result;
     }
@@ -85,5 +107,9 @@ public class FileProcessor {
 
     private void addOffer(String line) {
 
+    }
+
+    public int getCurrentLineNumber() {
+        return currentLineNumber;
     }
 }
