@@ -7,3 +7,7 @@
 7. Limit to 12 znaków, bo:
 	1. Najwiêksza taka codzienna kwota to miliard (a z przecinkiem i dwoma cyframi po to ju¿ 12 cyfr)
 	2. Nie maxDouble bo jak bêdzie dobry kurs to sie nam nie pomieœci.
+8. FileProc
+	doda³em repeatedCurrency
+9. Currency
+	doda³em fullname just in case;

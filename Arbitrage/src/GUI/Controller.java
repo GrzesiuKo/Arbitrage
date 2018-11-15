@@ -47,17 +47,19 @@ public class Controller {
         FileChooser fileChooser;
 
         fileChooser = new FileChooser();
-        fileProcessor = new FileProcessor();
+        fileProcessor = new FileProcessor(resultTextArea);
 
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Text Files", "*.txt");
         fileChooser.getExtensionFilters().add(extFilter);
         File file = fileChooser.showOpenDialog(stage);
 
+        resultTextArea.setText("Reading the file...");
+
         if(fileProcessor.checkFile(file)){
-            resultTextArea.setText("Poprawny plik. Obecna linia to: "+fileProcessor.getCurrentLineNumber());
+            resultTextArea.setText(resultTextArea.getText( )+"\nPoprawny plik. Obecna linia to: "+fileProcessor.getCurrentLineNumber());
             dataCheckBox.setSelected(true);
         }else{
-            resultTextArea.setText("Niepoprawny plik. Błąd w linii: "+fileProcessor.getCurrentLineNumber());
+            resultTextArea.setText(resultTextArea.getText( )+"\nNiepoprawny plik. Błąd w linii: "+fileProcessor.getCurrentLineNumber());
         }
 
     }

@@ -1,6 +1,10 @@
 # fsabfsiab
 1 EUR euro asf 
 2 PLN zloty
+3 EUR sdd
+4 FLS sdf
+4 PLN sasfa
+3 PLN ss
 # asofibsaios
 3 GBP LSD 0.123 PROC 0,424
 1 EUR PLN 1,5 STAŁA 3,74

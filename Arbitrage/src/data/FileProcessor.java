@@ -1,7 +1,10 @@
 package data;
 
+import javafx.scene.control.TextArea;
+
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -10,7 +13,15 @@ public class FileProcessor {
     Map<String, Currency> currencies;
     private int currentLineNumber = 0;
     int currentFilePart = 0;
+    String repeatedCurrency;
+    boolean isRepeatedCurrency;
+    TextArea messages;
 
+    public FileProcessor(TextArea communication){
+        currencies = new HashMap<>();
+        messages = communication;
+        isRepeatedCurrency = false;
+    }
 
     public boolean checkFile(File file) {
         Scanner scanner;
@@ -34,6 +45,7 @@ public class FileProcessor {
                 currentLine = scanner.nextLine();
                 currentLineNumber++;
                 result = checkLine(currentLine, currentLineNumber);
+                reportCurrencyRepetition(isRepeatedCurrency);
             }
         } else {
             result = false;
@@ -70,6 +82,7 @@ public class FileProcessor {
             return false;
         }
 
+
         return result;
     }
 
@@ -102,7 +115,26 @@ public class FileProcessor {
     }
 
     private void addCurrency(String line) {
+        String shortcut;
+        String fullName;
+        Scanner scanner;
+        Currency currency;
 
+        scanner = new Scanner(line);
+        scanner.next();
+        shortcut = scanner.next();
+        scanner.useDelimiter("");
+        scanner.next(" ");
+        scanner.useDelimiter("$");
+        fullName = scanner.next();
+        currency = new Currency(shortcut, fullName);
+
+        if (currencies.containsKey(shortcut)){
+            repeatedCurrency = shortcut;
+            isRepeatedCurrency = true;
+        }else{
+            currencies.put(shortcut, currency);
+        }
     }
 
     private void addOffer(String line) {
@@ -111,5 +143,12 @@ public class FileProcessor {
 
     public int getCurrentLineNumber() {
         return currentLineNumber;
+    }
+
+    public void reportCurrencyRepetition(boolean isToReport){
+        if (isToReport){
+            messages.setText(messages.getText()+"\nRepeated declaration of: "+repeatedCurrency);
+            isRepeatedCurrency = false;
+        }
     }
 }
