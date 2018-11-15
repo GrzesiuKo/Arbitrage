@@ -94,7 +94,7 @@ public class FileProcessor {
 
         scanner = new Scanner(line);
         scanner.useDelimiter(Pattern.compile("$"));
-        offerLine = Pattern.compile("(\\d)+\\s[A-Z]{3}\\s[A-Z]{3}\\s(\\d+)((,|.){1}(\\d+))?\\s(PROC|STAŁA)\\s\\d+((,|.){1}(\\d+))?\\s*");
+        offerLine = Pattern.compile("(\\d)+\\s[A-Z]{3}\\s[A-Z]{3}\\s(\\d+)((,|\\.)(\\d+))?\\s(PROC|STAŁA)\\s\\d+((,|\\.)(\\d+))?\\s*");
 
         result = scanner.hasNext(offerLine);
 

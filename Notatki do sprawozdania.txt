@@ -3,3 +3,7 @@
 3. zmiana nazwy z calculateExchangePath na calculateExchange
 4. Po³¹czê file processor i file checker aby dwa razy ca³ego pliku nie przechodziæ
 5. check offer line zamiast check rate line
+6. Doda³em pole Credit do money exchange, bo jednak ma byæ tam tak¿e kwota podana
+7. Limit to 12 znaków, bo:
+	1. Najwiêksza taka codzienna kwota to miliard (a z przecinkiem i dwoma cyframi po to ju¿ 12 cyfr)
+	2. Nie maxDouble bo jak bêdzie dobry kurs to sie nam nie pomieœci.

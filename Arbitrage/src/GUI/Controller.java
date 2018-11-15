@@ -4,9 +4,11 @@ import data.FileProcessor;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import textInput.CurrencyNameTextField;
+import textInput.CreditTextField;
+import textInput.CurrencyTextField;
 
 import java.io.File;
 
@@ -27,13 +29,19 @@ public class Controller {
     CheckBox creditCheckBox;
 
     @FXML
-    CurrencyNameTextField toTextField;
+    CurrencyTextField toTextField;
 
     @FXML
-    CurrencyNameTextField fromTextField;
+    CurrencyTextField fromTextField;
 
     @FXML
     TextArea resultTextArea;
+
+    @FXML
+    CreditTextField creditExchangeTextField;
+
+    @FXML
+    CreditTextField creditArbitrageTextField;
 
     public void chooseFile() {
         FileChooser fileChooser;
