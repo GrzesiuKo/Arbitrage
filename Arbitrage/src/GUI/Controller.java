@@ -4,7 +4,6 @@ import data.FileProcessor;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import textInput.CreditTextField;
@@ -55,13 +54,15 @@ public class Controller {
 
         resultTextArea.setText("Reading the file...");
 
-        if(fileProcessor.checkFile(file)){
+        if(fileProcessor.checkFileAndMakeGraph(file)){
             resultTextArea.setText(resultTextArea.getText( )+"\nPoprawny plik. Obecna linia to: "+fileProcessor.getCurrentLineNumber());
             dataCheckBox.setSelected(true);
         }else{
             resultTextArea.setText(resultTextArea.getText( )+"\nNiepoprawny plik. Błąd w linii: "+fileProcessor.getCurrentLineNumber());
         }
 
+        fileProcessor.showGraph();
+        resultTextArea.setText(resultTextArea.getText()+"\nFinished file reading.");
     }
 
     public void calculateExchange() {

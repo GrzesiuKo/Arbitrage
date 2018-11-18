@@ -14,6 +14,27 @@ public class Currency {
     public Currency(String shortName, String fullName) {
         this.shortName = shortName;
         this.fullName = fullName;
+        exchanges = new ArrayList<>();
+    }
+
+    public boolean hasOffer(Offer offer){
+        boolean result;
+
+        if (offer == null){
+            return false;
+        }else{
+            result = false;
+        }
+
+        for (Offer o: exchanges) {
+            result = offer.getCurrency().equals(o.getCurrency());
+        }
+
+        return result;
+    }
+
+    public void addOffer(Offer offer){
+        exchanges.add(offer);
     }
 
     public String getShortName() {
@@ -62,5 +83,9 @@ public class Currency {
 
     public void setPrevious(Currency previous) {
         this.previous = previous;
+    }
+
+    public ArrayList<Offer> getExchanges() {
+        return exchanges;
     }
 }

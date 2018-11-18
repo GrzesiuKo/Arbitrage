@@ -11,3 +11,4 @@
 	doda³em repeatedCurrency
 9. Currency
 	doda³em fullname just in case;
+10. Pojawi³o siê tyle metod do operacji na mapie currencies, ¿e wydzieli³em klase Graph dla lepszej czytlenoœci i ³atwoœci korzystania.

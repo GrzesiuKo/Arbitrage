@@ -4,13 +4,12 @@ import javafx.scene.control.TextArea;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class FileProcessor {
-    Map<String, Currency> currencies;
+    Graph graph;
     private int currentLineNumber = 0;
     int currentFilePart = 0;
     String repeatedCurrency;
@@ -18,12 +17,12 @@ public class FileProcessor {
     TextArea messages;
 
     public FileProcessor(TextArea communication){
-        currencies = new HashMap<>();
+        graph = new Graph();
         messages = communication;
         isRepeatedCurrency = false;
     }
 
-    public boolean checkFile(File file) {
+    public boolean checkFileAndMakeGraph(File file) {
         Scanner scanner;
         boolean result;
         String currentLine;
@@ -35,6 +34,7 @@ public class FileProcessor {
                 e.printStackTrace();
                 return false;
             }
+            initializeFileProcessor(messages);
             result = true;
         } else {
             return false;
@@ -44,7 +44,7 @@ public class FileProcessor {
             while (result != false && scanner.hasNextLine()) {
                 currentLine = scanner.nextLine();
                 currentLineNumber++;
-                result = checkLine(currentLine, currentLineNumber);
+                result = checkLineAndAddNode(currentLine, currentLineNumber);
                 reportCurrencyRepetition(isRepeatedCurrency);
             }
         } else {
@@ -54,7 +54,13 @@ public class FileProcessor {
         return result;
     }
 
-    private boolean checkLine(String line, int lineNumber) {
+    private void initializeFileProcessor(TextArea communication){
+        graph = new Graph();
+        messages = communication;
+        isRepeatedCurrency = false;
+    }
+
+    private boolean checkLineAndAddNode(String line, int lineNumber) {
         boolean result;
 
         if (lineNumber == 1) {
@@ -129,16 +135,48 @@ public class FileProcessor {
         fullName = scanner.next();
         currency = new Currency(shortcut, fullName);
 
-        if (currencies.containsKey(shortcut)){
+        if (graph.hasCurrency(shortcut)){
             repeatedCurrency = shortcut;
             isRepeatedCurrency = true;
         }else{
-            currencies.put(shortcut, currency);
+            graph.addCurrency(shortcut, currency);
         }
     }
 
     private void addOffer(String line) {
+        String from;
+        String to;
+        double rate;
+        double charge;
+        double percent;
+        Scanner scanner;
+        Offer offer;
 
+        if (line != null){
+            scanner = new Scanner(line);
+            from = null;
+            to = null;
+            rate = 0;
+            charge = 0;
+            percent = 0;
+            offer = null;
+        }else{
+            return;
+        }
+
+        scanner.next();
+        from = scanner.next();
+        to = scanner.next();
+        rate = getDoubleFromString(scanner.next());
+
+        if (isPercent(scanner.next())){
+            percent = getDoubleFromString(scanner.next());
+        }else{
+            charge = getDoubleFromString(scanner.next());
+        }
+
+        offer = initializeOffer(to, rate, percent, charge);
+        graph.connectOfferWithCurrency(offer, from);
     }
 
     public int getCurrentLineNumber() {
@@ -151,4 +189,46 @@ public class FileProcessor {
             isRepeatedCurrency = false;
         }
     }
+
+    private boolean isPercent(String name){
+        return name.matches("PROC");
+    }
+
+    private double getDoubleFromString(String text){
+        Scanner scanner;
+        if (text.matches("\\d*(\\.(\\d+))?")){
+            return Double.parseDouble(text);
+        }else if(text.matches("\\d*(,(\\d+))?")){
+            scanner = new Scanner(text);
+            return scanner.nextDouble();
+        }else{
+            return -1;
+        }
+    }
+
+    private Offer initializeOffer(String to, double rate, double percentCharge, double standingCharge){
+        Offer offer;
+        Currency currency;
+
+        if (graph.hasCurrency(to)){
+            currency = graph.getCurrency(to);
+            offer = new Offer(currency, rate, percentCharge, standingCharge);
+        }else{
+            offer = null;
+        }
+        return offer;
+    }
+
+    public void showGraph(){
+        ArrayList<Currency> currencies;
+        currencies = graph.toArrayList();
+
+        for (Currency c: currencies) {
+            messages.setText(messages.getText()+"\n"+c.getShortName()+": ");
+            for (Offer o: c.getExchanges()) {
+                messages.setText(messages.getText()+o.getCurrency().getShortName()+" ");
+            }
+        }
+    }
+
 }
