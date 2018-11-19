@@ -4,6 +4,8 @@ import javafx.event.EventHandler;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 
+import java.util.Scanner;
+
 public class CreditTextField extends TextField {
     int charLimit;
 
@@ -54,4 +56,21 @@ public class CreditTextField extends TextField {
             setText(getText().substring(0, charLimit));
         }
     }
+
+    public double getDoubleFromString(){
+        String text;
+        Scanner scanner;
+
+        text = getText();
+
+        if (text.matches("\\d*(\\.(\\d+))?")){
+            return Double.parseDouble(text);
+        }else if(text.matches("\\d*(,(\\d+))?")){
+            scanner = new Scanner(text);
+            return scanner.nextDouble();
+        }else{
+            return -1;
+        }
+    }
+
 }

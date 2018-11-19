@@ -4,9 +4,10 @@ import java.util.Stack;
 
 public class Path {
     private double charges;
-    private double resultingRate;
-    private Stack<String> nodes;
+    private double resultingCredit;
     private String resultingPath;
+
+
 
     private void add(String node){
 
@@ -16,5 +17,23 @@ public class Path {
         String result = null;
 
         return result;
+    }
+
+    public void setResultingPath(String resultingPath) {
+        this.resultingPath = resultingPath;
+    }
+
+    public String getResultingPath() {
+        return resultingPath;
+    }
+
+    public void setResultingCredit(double resultingCredit) {
+        this.resultingCredit = resultingCredit;
+    }
+
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append(resultingPath).append("\n").append(resultingCredit);
+        return sb.toString();
     }
 }

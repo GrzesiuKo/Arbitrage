@@ -231,4 +231,7 @@ public class FileProcessor {
         }
     }
 
+    public Graph getGraph() {
+        return graph;
+    }
 }

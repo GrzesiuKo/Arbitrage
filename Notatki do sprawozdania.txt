@@ -12,3 +12,6 @@
 9. Currency
 	doda³em fullname just in case;
 10. Pojawi³o siê tyle metod do operacji na mapie currencies, ¿e wydzieli³em klase Graph dla lepszej czytlenoœci i ³atwoœci korzystania.
+11. doda³em liste odwiedzonych do Currency
+12. Doda³em loop iterator ¿eby w kó³ko chodziæ
+13. Path pozmienia³em
