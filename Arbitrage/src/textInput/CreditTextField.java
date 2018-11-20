@@ -63,9 +63,9 @@ public class CreditTextField extends TextField {
 
         text = getText();
 
-        if (text.matches("\\d*(\\.(\\d+))?")){
+        if (text.matches("\\d*(\\.(\\d+))?") && !text.isEmpty()){
             return Double.parseDouble(text);
-        }else if(text.matches("\\d*(,(\\d+))?")){
+        }else if(text.matches("\\d*(,(\\d+))?") && !text.isEmpty()){
             scanner = new Scanner(text);
             return scanner.nextDouble();
         }else{

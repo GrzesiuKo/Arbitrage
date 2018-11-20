@@ -2,6 +2,7 @@ package data;
 
 import analyzing.Path;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Currency {
@@ -91,11 +92,16 @@ public class Currency {
     public Path toPath() {
         String pathWay;
         Path path;
+
         path = new Path();
         StringBuilder sb = new StringBuilder();
+
         for (Currency c : visited) {
-            sb.append(c.getShortName()).append(c.getExchangedMoney()).append("->");
+            sb.append(c.getShortName()).append("->");
         }
+
+        sb.delete(sb.toString().length() -2, sb.toString().length());
+
         pathWay = sb.toString();
         path.setResultingPath(pathWay);
         path.setResultingCredit(exchangedMoney);

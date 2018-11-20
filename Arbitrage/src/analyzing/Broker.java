@@ -7,8 +7,6 @@ import data.Offer;
 import java.util.ArrayList;
 
 public class Broker {
-    private FinancialAnalyst analyst;
-    private double finalValue;
     private Graph graph;
 
     private boolean isArbitrage;
@@ -18,10 +16,13 @@ public class Broker {
         this.graph = graph;
     }
 
-    public Path earnByArbitrage(ArrayList<Currency> currencies, double credit) {
+    public Path earnByArbitrage(double credit) {
         Path path;
         int rootIndex;
         Currency root;
+        ArrayList<Currency> currencies;
+
+        currencies = graph.toArrayList();
 
         if (currencies != null && currencies.size() > 0 && credit >= 0) {
             path = null;
@@ -60,7 +61,35 @@ public class Broker {
     }
 
     public Path exchange(double credit, String from, String to) {
-        Path path = null;
+        Path path;
+        int rootIndex;
+        Currency root;
+        Currency result;
+        ArrayList<Currency> currencies;
+
+        currencies = graph.toArrayList();
+
+        if (currencies != null && currencies.size() > 0 && credit >= 0) {
+            path = null;
+            isArbitrage = false;
+            graph.prepareForNextPathFinding();
+            this.credit = credit;
+            root = graph.getCurrency(from);
+            root.setExchangedMoney(credit);
+
+            root.addVisited(root);
+            updateNodes(root);
+            graph.setRoot(root);
+            rootIndex = currencies.indexOf(root);
+        } else {
+            return null;
+        }
+
+        configureGraph(currencies, rootIndex);
+
+        result = graph.getCurrency(to);
+
+        path = result.toPath();
 
         return path;
     }
@@ -78,11 +107,9 @@ public class Broker {
             root = currencies.get(rootIndex);
         }
         while (iterationNumber < currencies.size() - 1) {
-
             for (Currency c : currencies) {
-
                 if (!c.equals(root) && c.getExchangedMoney() >= 0) {
-                    System.out.println("Na plusie, bierzemy jego sąsiadów: " + c.getShortName() + c.getExchangedMoney());
+                    System.out.println("Na plusie, bierzemy jego sąsiadów: " + c.getShortName());
                     hasChanged = updateNodes(c);
                 }
                 if (isArbitrage){
@@ -144,8 +171,8 @@ public class Broker {
             return false;
         }
 
-        result = (start * rate) * (100 - percentCharge) / 100 - standingCharge;
-
+        result = ((start * rate) * ((100 - percentCharge)) / 100) - standingCharge;
+System.out.println("LICZE");
         if (destination.getExchangedMoney() < result) {
             destination.setExchangedMoney(result);
             visited = new ArrayList<>(source.getVisited());

@@ -16,7 +16,7 @@ public class FileProcessor {
     boolean isRepeatedCurrency;
     TextArea messages;
 
-    public FileProcessor(TextArea communication){
+    public FileProcessor(TextArea communication) {
         graph = new Graph();
         messages = communication;
         isRepeatedCurrency = false;
@@ -54,7 +54,7 @@ public class FileProcessor {
         return result;
     }
 
-    private void initializeFileProcessor(TextArea communication){
+    private void initializeFileProcessor(TextArea communication) {
         graph = new Graph();
         messages = communication;
         isRepeatedCurrency = false;
@@ -135,10 +135,10 @@ public class FileProcessor {
         fullName = scanner.next();
         currency = new Currency(shortcut, fullName);
 
-        if (graph.hasCurrency(shortcut)){
+        if (graph.hasCurrency(shortcut)) {
             repeatedCurrency = shortcut;
             isRepeatedCurrency = true;
-        }else{
+        } else {
             graph.addCurrency(shortcut, currency);
         }
     }
@@ -152,7 +152,7 @@ public class FileProcessor {
         Scanner scanner;
         Offer offer;
 
-        if (line != null){
+        if (line != null) {
             scanner = new Scanner(line);
             from = null;
             to = null;
@@ -160,7 +160,7 @@ public class FileProcessor {
             charge = 0;
             percent = 0;
             offer = null;
-        }else{
+        } else {
             return;
         }
 
@@ -169,64 +169,67 @@ public class FileProcessor {
         to = scanner.next();
         rate = getDoubleFromString(scanner.next());
 
-        if (isPercent(scanner.next())){
+        if (isPercent(scanner.next())) {
             percent = getDoubleFromString(scanner.next());
-        }else{
+        } else {
             charge = getDoubleFromString(scanner.next());
         }
 
-        offer = initializeOffer(to, rate, percent, charge);
-        graph.connectOfferWithCurrency(offer, from);
+        if (graph.hasCurrency(from) && graph.hasCurrency(to)) {
+
+            offer = initializeOffer(to, rate, percent, charge);
+            graph.connectOfferWithCurrency(offer, from);
+        }
     }
 
     public int getCurrentLineNumber() {
         return currentLineNumber;
     }
 
-    public void reportCurrencyRepetition(boolean isToReport){
-        if (isToReport){
-            messages.setText(messages.getText()+"\nRepeated declaration of: "+repeatedCurrency);
+    public void reportCurrencyRepetition(boolean isToReport) {
+        if (isToReport) {
+            messages.setText(messages.getText() + "\nRepeated declaration of: " + repeatedCurrency);
             isRepeatedCurrency = false;
         }
     }
 
-    private boolean isPercent(String name){
+    private boolean isPercent(String name) {
         return name.matches("PROC");
     }
 
-    private double getDoubleFromString(String text){
+    private double getDoubleFromString(String text) {
         Scanner scanner;
-        if (text.matches("\\d*(\\.(\\d+))?")){
+        if (text.matches("\\d*(\\.(\\d+))?")) {
             return Double.parseDouble(text);
-        }else if(text.matches("\\d*(,(\\d+))?")){
+        } else if (text.matches("\\d*(,(\\d+))?")) {
             scanner = new Scanner(text);
             return scanner.nextDouble();
-        }else{
+        } else {
             return -1;
         }
     }
 
-    private Offer initializeOffer(String to, double rate, double percentCharge, double standingCharge){
+    private Offer initializeOffer(String to, double rate, double percentCharge, double standingCharge) {
         Offer offer;
         Currency currency;
 
-        if (graph.hasCurrency(to)){
+        if (graph.hasCurrency(to)) {
             currency = graph.getCurrency(to);
             offer = new Offer(currency, rate, percentCharge, standingCharge);
-        }else{
+        } else {
             offer = null;
         }
         return offer;
     }
 
-    public void showGraph(){
+    public void showGraph() {
         ArrayList<Currency> currencies;
         currencies = graph.toArrayList();
 
-        for (Currency c: currencies) {
-            messages.setText(messages.getText()+"\n"+c.getShortName()+": ");
-            for (Offer o: c.getExchanges()) {
-                messages.setText(messages.getText()+o.getCurrency().getShortName()+" ");
+        for (Currency c : currencies) {
+            messages.setText(messages.getText() + "\n" + c.getShortName() + ": ");
+            for (Offer o : c.getExchanges()) {
+                messages.setText(messages.getText() + o.getCurrency().getShortName() + " ");
             }
         }
     }

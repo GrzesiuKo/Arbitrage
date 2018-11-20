@@ -61,11 +61,13 @@ public class Controller {
         if (fileProcessor.checkFileAndMakeGraph(file)) {
             resultTextArea.setText(resultTextArea.getText() + "\nPoprawny plik. Obecna linia to: " + fileProcessor.getCurrentLineNumber());
             dataCheckBox.setSelected(true);
+
+            graph = fileProcessor.getGraph();
+            fileProcessor.showGraph();
         } else {
             resultTextArea.setText(resultTextArea.getText() + "\nNiepoprawny plik. Błąd w linii: " + fileProcessor.getCurrentLineNumber());
         }
-        graph = fileProcessor.getGraph();
-        fileProcessor.showGraph();
+
         resultTextArea.setText(resultTextArea.getText() + "\nFinished file reading.");
     }
 
@@ -76,15 +78,32 @@ public class Controller {
         String to;
         double credit;
 
-        exchangePath = null;
+        if (graph == null) {
+            resultTextArea.setText("No file was given.");
+            return;
+        }
+
         broker = new Broker(graph);
         from = fromTextField.getText();
         to = toTextField.getText();
         credit = creditExchangeTextField.getDoubleFromString();
 
-        exchangePath = broker.exchange(credit, from, to);
+        if (!graph.hasCurrency(from)) {
+            resultTextArea.setText("No such currency like the one given in FROM field.");
+            return;
+        }
 
-        resultTextArea.setText("Exchange Path:\n"+exchangePath);
+        if (!graph.hasCurrency(to)) {
+            resultTextArea.setText("No such currency like the one given in TO field.");
+            return;
+        }
+
+        if (!from.isEmpty() && !to.isEmpty()) {
+            exchangePath = broker.exchange(credit, from, to);
+            resultTextArea.setText("Exchange Path:\n" + exchangePath);
+        } else {
+            resultTextArea.setText("Fill the missing information.");
+        }
     }
 
     public void calculateArbitrage() {
@@ -92,15 +111,23 @@ public class Controller {
         Broker broker;
         double credit;
 
-        arbitragePath = null;
+        if (graph == null) {
+            resultTextArea.setText("No file was given.");
+            return;
+        }
+
         broker = new Broker(graph);
         credit = creditArbitrageTextField.getDoubleFromString();
+        if (credit != -1) {
+            arbitragePath = broker.earnByArbitrage(credit);
 
-        arbitragePath = broker.earnByArbitrage(graph.toArrayList(),credit);
-        if (arbitragePath != null) {
-            resultTextArea.setText("Arbitrage Path:\n" + arbitragePath.toString());
-        }else{
-            resultTextArea.setText("Arbitrage Path: nie ma");
+            if (arbitragePath != null) {
+                resultTextArea.setText("Arbitrage Path:\n" + arbitragePath.toString());
+            } else {
+                resultTextArea.setText("Arbitrage Path: nie ma");
+            }
+        } else {
+            resultTextArea.setText("Fill the missing information.");
         }
     }
 

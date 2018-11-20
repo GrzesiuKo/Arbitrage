@@ -1,5 +1,6 @@
 package analyzing;
 
+import java.text.DecimalFormat;
 import java.util.Stack;
 
 public class Path {
@@ -33,7 +34,7 @@ public class Path {
 
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append(resultingPath).append("\n").append(resultingCredit);
+        sb.append(resultingPath).append("\n").append(new DecimalFormat("#.00").format(resultingCredit));
         return sb.toString();
     }
 }
