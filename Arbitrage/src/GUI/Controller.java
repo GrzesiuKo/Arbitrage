@@ -97,8 +97,11 @@ public class Controller {
         credit = creditArbitrageTextField.getDoubleFromString();
 
         arbitragePath = broker.earnByArbitrage(graph.toArrayList(),credit);
-
-        resultTextArea.setText("Arbitrage Path:\n"+arbitragePath.toString());
+        if (arbitragePath != null) {
+            resultTextArea.setText("Arbitrage Path:\n" + arbitragePath.toString());
+        }else{
+            resultTextArea.setText("Arbitrage Path: nie ma");
+        }
     }
 
     public void setStage(Stage stage) {
