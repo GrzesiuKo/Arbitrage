@@ -4,6 +4,8 @@
 3 CHF sds
 4 USD fs
 3 LSD greg
+2 ABC dsf
+3 XYZ ff
 2 DHL fsdf
 # asofibsaios
 3 PLN EUR 3 STAŁA 100
@@ -15,3 +17,4 @@
 3 LSD CHF 100 STAŁA 100
 3 DHL LSD 0.5 STAŁA 100
 4 EUR DHL 300 STAŁA 100
+3 ABC XYZ 1 STAŁA 1

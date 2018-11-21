@@ -34,7 +34,7 @@ public class Path {
 
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append(resultingPath).append("\n").append(new DecimalFormat("#.00").format(resultingCredit));
+        sb.append(resultingPath).append("\n").append(new DecimalFormat("0.00").format(resultingCredit));
         return sb.toString();
     }
 }

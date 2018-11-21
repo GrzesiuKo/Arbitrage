@@ -99,12 +99,15 @@ public class Currency {
         for (Currency c : visited) {
             sb.append(c.getShortName()).append("->");
         }
+        if (visited.size()>1) {
+            sb.delete(sb.toString().length() - 2, sb.toString().length());
+            pathWay = sb.toString();
+            path.setResultingPath(pathWay);
+            path.setResultingCredit(exchangedMoney);
+        }else{
+            return null;
+        }
 
-        sb.delete(sb.toString().length() -2, sb.toString().length());
-
-        pathWay = sb.toString();
-        path.setResultingPath(pathWay);
-        path.setResultingCredit(exchangedMoney);
         return path;
     }
 

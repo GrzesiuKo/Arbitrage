@@ -35,7 +35,6 @@ public class Broker {
         }
 
         while (!isArbitrage && rootIndex < currencies.size()) {
-            System.out.println("Kolejna waluta jako root: " + currencies.get(rootIndex).getShortName());
             graph.prepareForNextPathFinding();
             root = currencies.get(rootIndex);
             graph.setRoot(root);
@@ -89,8 +88,11 @@ public class Broker {
 
         result = graph.getCurrency(to);
 
-        path = result.toPath();
-
+        if (result.getExchangedMoney() == 0) {
+            path = null;
+        } else {
+            path = result.toPath();
+        }
         return path;
     }
 
@@ -109,10 +111,9 @@ public class Broker {
         while (iterationNumber < currencies.size() - 1) {
             for (Currency c : currencies) {
                 if (!c.equals(root) && c.getExchangedMoney() >= 0) {
-                    System.out.println("Na plusie, bierzemy jego sąsiadów: " + c.getShortName());
                     hasChanged = updateNodes(c);
                 }
-                if (isArbitrage){
+                if (isArbitrage) {
                     break;
                 }
             }
@@ -133,17 +134,10 @@ public class Broker {
             node = o.getCurrency();
 
             if (!node.hasVisited(current)) {
-                System.out.println("\tWchodzimy z "+current.getShortName()+" do node " + node.getShortName());
-
-                System.out.println("\t\t1. Scieżka do : "+current.getShortName()+" to\n" + current.toPath().toString());
                 hasChanged = updateExchangedMoney(current, o);
-
-                System.out.println("\t\tNode money: " + node.getExchangedMoney());
-                System.out.println("\t\t2.Scieżka do : "+current.getShortName()+" to\n" + current.toPath().toString());
-                System.out.println("\t\tScieżka do : "+node.getShortName()+" to\n" + node.toPath().toString());
-            }else if(node.equals(graph.getRoot())){
+            } else if (node.equals(graph.getRoot())) {
                 updateExchangedMoney(current, o);
-                if (graph.getRoot().getExchangedMoney() > credit){
+                if (graph.getRoot().getExchangedMoney() > credit) {
                     isArbitrage = true;
                     return true;
                 }
@@ -172,7 +166,6 @@ public class Broker {
         }
 
         result = ((start * rate) * ((100 - percentCharge)) / 100) - standingCharge;
-System.out.println("LICZE");
         if (destination.getExchangedMoney() < result) {
             destination.setExchangedMoney(result);
             visited = new ArrayList<>(source.getVisited());

@@ -64,8 +64,10 @@ public class Controller {
 
             graph = fileProcessor.getGraph();
             fileProcessor.showGraph();
+        } else if (fileProcessor.getCurrentLineNumber() == 0) {
+            resultTextArea.setText(resultTextArea.getText() + "\nIncorrect ﬁle. Make sure it's UFC-8 encoding.");
         } else {
-            resultTextArea.setText(resultTextArea.getText() + "\nNiepoprawny plik. Błąd w linii: " + fileProcessor.getCurrentLineNumber());
+            resultTextArea.setText(resultTextArea.getText() + "\nIncorrect ﬁle. Line " + fileProcessor.getCurrentLineNumber() + " is wrong. Compare it with the ﬁle pattern.");
         }
 
         resultTextArea.setText(resultTextArea.getText() + "\nFinished file reading.");
@@ -79,7 +81,7 @@ public class Controller {
         double credit;
 
         if (graph == null) {
-            resultTextArea.setText("No file was given.");
+            resultTextArea.setText("There was no ﬁle given.");
             return;
         }
 
@@ -89,18 +91,22 @@ public class Controller {
         credit = creditExchangeTextField.getDoubleFromString();
 
         if (!graph.hasCurrency(from)) {
-            resultTextArea.setText("No such currency like the one given in FROM field.");
+            resultTextArea.setText("There is no such currency like the one given in FROM field.");
             return;
         }
 
         if (!graph.hasCurrency(to)) {
-            resultTextArea.setText("No such currency like the one given in TO field.");
+            resultTextArea.setText("There is no such currency like the one given in TO field.");
             return;
         }
 
         if (!from.isEmpty() && !to.isEmpty()) {
             exchangePath = broker.exchange(credit, from, to);
-            resultTextArea.setText("Exchange Path:\n" + exchangePath);
+            if (exchangePath != null) {
+                resultTextArea.setText("Exchange Path:\n" + exchangePath);
+            } else {
+                resultTextArea.setText("No profitable exchange between those currencies possible.");
+            }
         } else {
             resultTextArea.setText("Fill the missing information.");
         }
@@ -124,7 +130,7 @@ public class Controller {
             if (arbitragePath != null) {
                 resultTextArea.setText("Arbitrage Path:\n" + arbitragePath.toString());
             } else {
-                resultTextArea.setText("Arbitrage Path: nie ma");
+                resultTextArea.setText("No arbitrage found.");
             }
         } else {
             resultTextArea.setText("Fill the missing information.");

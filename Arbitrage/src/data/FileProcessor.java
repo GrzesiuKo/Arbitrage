@@ -2,8 +2,15 @@ package data;
 
 import javafx.scene.control.TextArea;
 
+import java.beans.Encoder;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetDecoder;
+import java.nio.charset.CharsetEncoder;
+import java.nio.charset.CoderResult;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -30,6 +37,7 @@ public class FileProcessor {
         if (file != null) {
             try {
                 scanner = new Scanner(file);
+
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
                 return false;
