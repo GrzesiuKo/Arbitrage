@@ -105,13 +105,20 @@ public class Broker {
             return;
         } else {
             iterationNumber = 0;
-            hasChanged = false;
             root = currencies.get(rootIndex);
         }
+
         while (iterationNumber < currencies.size() - 1) {
+            hasChanged = false;
+            System.out.println("Początek iteracji: " + iterationNumber);
             for (Currency c : currencies) {
+                System.out.println("Sprawdzamy walute " + c.getShortName());
+                System.out.println("Jej money to: " + c.getExchangedMoney());
                 if (!c.equals(root) && c.getExchangedMoney() >= 0) {
-                    hasChanged = updateNodes(c);
+
+                    if (updateNodes(c)) {
+                        hasChanged = true;
+                    }
                 }
                 if (isArbitrage) {
                     break;
@@ -120,8 +127,11 @@ public class Broker {
             if (!hasChanged || isArbitrage) {
                 break;
             }
+            System.out.println("Koniec iteracji: " + iterationNumber);
             iterationNumber++;
         }
+
+        System.out.println("Koniec iteracji: " + iterationNumber);
     }
 
     private boolean updateNodes(Currency current) {
@@ -133,14 +143,18 @@ public class Broker {
         for (Offer o : current.getExchanges()) {
             node = o.getCurrency();
 
-            if (!node.hasVisited(current)) {
+            System.out.println("\tWchodzimy do sąsiada: " + node.getShortName());
+            if (!node.hasVisited(current) || (node.getLastVisited() == current)) {
                 hasChanged = updateExchangedMoney(current, o);
+                if (hasChanged) {
+                    System.out.println("\t\tZaktualizowano: " + node.getShortName());
+                }
             } else if (node.equals(graph.getRoot())) {
                 updateExchangedMoney(current, o);
-                if (graph.getRoot().getExchangedMoney() > credit) {
-                    isArbitrage = true;
-                    return true;
-                }
+//                if (graph.getRoot().getExchangedMoney() > credit) {
+//                    isArbitrage = true;
+//                    return true;
+//                }
             }
         }
         return hasChanged;
@@ -168,9 +182,11 @@ public class Broker {
         result = ((start * rate) * ((100 - percentCharge)) / 100) - standingCharge;
         if (destination.getExchangedMoney() < result) {
             destination.setExchangedMoney(result);
-            visited = new ArrayList<>(source.getVisited());
-            destination.setVisited(visited);
-            destination.addVisited(destination);
+            if (destination.getLastVisited() != source) {
+                visited = new ArrayList<>(source.getVisited());
+                destination.setVisited(visited);
+                destination.addVisited(destination);
+            }
             return true;
         }
         return false;

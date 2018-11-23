@@ -2,15 +2,9 @@ package data;
 
 import javafx.scene.control.TextArea;
 
-import java.beans.Encoder;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
-import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.CharsetEncoder;
-import java.nio.charset.CoderResult;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -70,11 +64,15 @@ public class FileProcessor {
 
     private boolean checkLineAndAddNode(String line, int lineNumber) {
         boolean result;
+        int hashCharIndex;
 
+        hashCharIndex = line.indexOf("#");
+if (lineNumber==9){
+    System.out.println(line.indexOf("#"));
+}
         if (lineNumber == 1) {
-            result = line.startsWith("#");
-
-        } else if (line.startsWith("#")) {
+            result = hashCharIndex == 0 || hashCharIndex == 1;
+        } else if (hashCharIndex == 0 || hashCharIndex == 1 ) {
             currentFilePart++;
             result = true;
 

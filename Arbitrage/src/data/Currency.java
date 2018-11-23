@@ -116,4 +116,18 @@ public class Currency {
 
         return getShortName().equals(shortName);
     }
+
+    public Currency getLastVisited(){
+        Currency result;
+        int size;
+
+        size = visited.size();
+        result = null;
+
+        if (size-1>0){
+            result = visited.get(size-1);
+        }
+        return result;
+    }
+
 }

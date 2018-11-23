@@ -65,7 +65,7 @@ public class Controller {
             graph = fileProcessor.getGraph();
             fileProcessor.showGraph();
         } else if (fileProcessor.getCurrentLineNumber() == 0) {
-            resultTextArea.setText(resultTextArea.getText() + "\nIncorrect ﬁle. Make sure it's UFC-8 encoding.");
+            resultTextArea.setText(resultTextArea.getText() + "\nIncorrect ﬁle. Make sure it's UFT-8 encoding.");
         } else {
             resultTextArea.setText(resultTextArea.getText() + "\nIncorrect ﬁle. Line " + fileProcessor.getCurrentLineNumber() + " is wrong. Compare it with the ﬁle pattern.");
         }
