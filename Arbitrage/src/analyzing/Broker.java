@@ -100,12 +100,14 @@ public class Broker {
         int iterationNumber;
         boolean hasChanged;
         Currency root;
+        LoopIterator loopIterator;
 
         if (currencies == null || rootIndex < 0) {
             return;
         } else {
             iterationNumber = 0;
             root = currencies.get(rootIndex);
+            loopIterator = new LoopIterator(rootIndex, currencies.size());
         }
 
         while (iterationNumber < currencies.size() - 1) {
@@ -147,14 +149,10 @@ public class Broker {
             if (!node.hasVisited(current) || (node.getLastVisited() == current)) {
                 hasChanged = updateExchangedMoney(current, o);
                 if (hasChanged) {
-                    System.out.println("\t\tZaktualizowano: " + node.getShortName());
+                    System.out.println("\t\tZaktualizowano: " + node.getShortName()+" "+node.getExchangedMoney());
                 }
             } else if (node.equals(graph.getRoot())) {
                 updateExchangedMoney(current, o);
-//                if (graph.getRoot().getExchangedMoney() > credit) {
-//                    isArbitrage = true;
-//                    return true;
-//                }
             }
         }
         return hasChanged;
