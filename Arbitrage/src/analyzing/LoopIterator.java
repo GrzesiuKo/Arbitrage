@@ -1,15 +1,16 @@
 package analyzing;
 
 public class LoopIterator {
-    int iterator;
-    int size;
-    int begin;
-    boolean hasLoopEnded;
+    private int iterator;
+    private int size;
+    private int begin;
+    private boolean hasLoopEnded;
 
     public LoopIterator(int begin, int size) {
         this.iterator = begin;
         this.begin = begin;
         this.size = size;
+        hasLoopEnded = false;
     }
 
     public int next() {

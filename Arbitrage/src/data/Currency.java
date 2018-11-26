@@ -123,9 +123,9 @@ public class Currency {
 
         size = visited.size();
         result = null;
-
-        if (size-1>0){
-            result = visited.get(size-1);
+//czy oststani to size -2 czy size-1 bo na koncu dodajemy obecny wezeł
+        if (size-2>=0){
+            result = visited.get(size-2);
         }
         return result;
     }

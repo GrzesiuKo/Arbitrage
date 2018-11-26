@@ -110,6 +110,7 @@ public class Controller {
         } else {
             resultTextArea.setText("Fill the missing information.");
         }
+        graph.writeOutCurrencies();
     }
 
     public void calculateArbitrage() {

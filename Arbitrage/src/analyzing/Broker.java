@@ -101,6 +101,7 @@ public class Broker {
         boolean hasChanged;
         Currency root;
         LoopIterator loopIterator;
+        boolean hasLoopEnded;
 
         if (currencies == null || rootIndex < 0) {
             return;
@@ -108,12 +109,16 @@ public class Broker {
             iterationNumber = 0;
             root = currencies.get(rootIndex);
             loopIterator = new LoopIterator(rootIndex, currencies.size());
+            hasLoopEnded = false;
         }
 
         while (iterationNumber < currencies.size() - 1) {
             hasChanged = false;
+            hasLoopEnded = false;
+            Currency c;
             System.out.println("Początek iteracji: " + iterationNumber);
-            for (Currency c : currencies) {
+            while (!hasLoopEnded) {
+                c = currencies.get(loopIterator.getIterator());
                 System.out.println("Sprawdzamy walute " + c.getShortName());
                 System.out.println("Jej money to: " + c.getExchangedMoney());
                 if (!c.equals(root) && c.getExchangedMoney() >= 0) {
@@ -125,6 +130,8 @@ public class Broker {
                 if (isArbitrage) {
                     break;
                 }
+                loopIterator.next();
+                hasLoopEnded = loopIterator.hasLoopEnded();
             }
             if (!hasChanged || isArbitrage) {
                 break;
@@ -136,23 +143,24 @@ public class Broker {
         System.out.println("Koniec iteracji: " + iterationNumber);
     }
 
-    private boolean updateNodes(Currency current) {
-        Currency node;
+    private boolean updateNodes(Currency source) {
+        Currency destination;
         boolean hasChanged;
 
         hasChanged = false;
 
-        for (Offer o : current.getExchanges()) {
-            node = o.getCurrency();
+        for (Offer o : source.getExchanges()) {
+            destination = o.getCurrency();
 
-            System.out.println("\tWchodzimy do sąsiada: " + node.getShortName());
-            if (!node.hasVisited(current) || (node.getLastVisited() == current)) {
-                hasChanged = updateExchangedMoney(current, o);
+            System.out.println("\tWchodzimy do sąsiada: " + destination.getShortName());
+
+            if (checkIfICanUpdateNode(source, destination)) {
+                hasChanged = updateExchangedMoney(source, o);
                 if (hasChanged) {
-                    System.out.println("\t\tZaktualizowano: " + node.getShortName()+" "+node.getExchangedMoney());
+                    System.out.println("\t\tZaktualizowano: " + destination.getShortName() + " " + destination.getExchangedMoney());
                 }
-            } else if (node.equals(graph.getRoot())) {
-                updateExchangedMoney(current, o);
+            } else if (destination.equals(graph.getRoot())) {
+                updateExchangedMoney(source, o);
             }
         }
         return hasChanged;
@@ -180,13 +188,24 @@ public class Broker {
         result = ((start * rate) * ((100 - percentCharge)) / 100) - standingCharge;
         if (destination.getExchangedMoney() < result) {
             destination.setExchangedMoney(result);
-            if (destination.getLastVisited() != source) {
-                visited = new ArrayList<>(source.getVisited());
-                destination.setVisited(visited);
-                destination.addVisited(destination);
-            }
+            visited = new ArrayList<>(source.getVisited());
+            destination.setVisited(visited);
+            destination.addVisited(destination);
             return true;
         }
         return false;
     }
+
+    private boolean checkIfICanUpdateNode(Currency source, Currency destination){
+        boolean hasAlreadyVisited;
+        boolean itWasLastVisited;
+        boolean isItGoingToLoop;
+
+        hasAlreadyVisited = destination.hasVisited(source);
+        itWasLastVisited = destination.getLastVisited() == source;
+        isItGoingToLoop = source.hasVisited(destination);
+
+        return (!hasAlreadyVisited || itWasLastVisited) && !isItGoingToLoop;
+    }
+
 }

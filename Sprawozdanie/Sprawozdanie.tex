@@ -1,0 +1,102 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{indentfirst}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\selectlanguage{polish}
+\usepackage[top=2cm, bottom=2cm, left=1cm, right=1cm]{geometry}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength\parindent{24pt}
+\makeatletter
+\newcommand{\linia}{\rule{\linewidth}{0.4mm}}
+\renewcommand{\maketitle}{\begin{titlepage}
+    \vspace*{2cm}
+    \begin{center}\LARGE
+    Politechnika Warszawska\\
+    Wydział Elektryczny\\
+    \end{center}
+    \vspace{5cm}
+    \noindent\linia
+    \begin{center}
+      \LARGE \textsc{\@title}
+         \end{center}
+     \linia
+    \vspace{0.5cm}
+    \begin{flushright}
+    \begin{minipage}{5cm}
+    \textit{Autor:}\\
+    \normalsize \textsc{\@author} \par
+    \end{minipage}
+    \vspace{5cm}
+     \end{flushright}
+    \vspace*{\stretch{6}}
+    \begin{center}
+    \@date
+    \end{center}
+  \end{titlepage}
+}
+\makeatother
+\author{Grzegorz Kopyt}
+\title{Sprawozdanie \\
+,,Arbitrage''}
+\usepackage{graphicx}
+
+\fancyhf{}
+\rfoot{\thepage{}/\pageref{LastPage}}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\vspace{1cm}
+\noindent\linia
+\section{Cel powstania dokumentu}
+Dokument ma na celu podsumowanie pracy nad projektem ,,Arbitrage". Przedstawia problem, jaki miał zostać rozwiązany, opisuje zastosowany algorytm oraz wskazuje zmiany dokonane w stosunku do wcześniejszych specyfikacji. Dokument zawiera również wnioski z podjętych decyzji oraz refleksje nad zastosowanymi rozwiązaniami.
+
+\noindent\linia
+\section{Opis problemu}
+Program został postawiony przed dwoma zadaniami:
+\begin{itemize}
+\item znajdowaniem najkorzystniejszej ścieżki wymiany waluty,
+\item znajdowaniem dowolnego arbitrażu.
+\end{itemize}
+
+Jako źródło danych otrzymywał specjalnie spreparowany plik, który zawierał definicje walut oraz możliwych wymian (z informacją  o kursach i opłatach).
+Na podstawie tego pliku oraz kwoty wejściowej program miał znajdować dowolny arbitraż. Natomiast do znalezienia najkorzystniejszej ścieżki wymiany waluty otrzymywał oprócz pliku i kwoty wejściowej, także walutę wejściową oraz docelową.
+
+\noindent\linia
+\section{Wysoko abstrakcyjny opis działania algorytmu}
+\begin{enumerate}
+\item Algorytm pobiera dane od użytkownika (w zależności od zadania są to dane opisane w sekcji 2).
+\item Algorytm przechodzi kilkukrotnie po wszystkich walutach i możliwych wymianach dokonując obliczeń na kwocie wejściowej.
+\item W każdej walucie pozostawia największą kwotę oraz ścieżkę wymiany, którą można uzyskać z dotarcia do tej waluty od waluty początkowej.
+\item W zależności od zadania:
+\begin{enumerate}
+\item Wymiana
+\begin{enumerate}
+\item Algorytm pobiera z waluty docelowej ścieżkę oraz kwotę końcową.
+\end{enumerate}
+\item Arbitrage
+\begin{enumerate}
+\item Algorytm pobiera z waluty początkowej, która jest także walutą końcową, ścieżkę wymiany oraz kwotę końcową.
+\end{enumerate}
+\end{enumerate}
+\item Algorytm wyświetla użytkownikowi wyniki swojej pracy.
+\end{enumerate}
+\noindent\linia
+\section{ Efekty działania programu}
+\noindent\linia
+\section{Zmiany względem specyfikacji}
+
+\noindent\linia
+\section{Podsumowanie i wnioski}
+
+\noindent\linia
+
+\end{document}
+
+
+
