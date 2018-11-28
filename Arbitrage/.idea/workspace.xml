@@ -66,54 +66,38 @@
       <file leaf-file-name="Offer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/data/Offer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+            <state relative-caret-position="21">
+              <caret line="12" column="45" lean-forward="true" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="18" column="67" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreditTextField.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/textInput/CreditTextField.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CurrencyTextField.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/textInput/CurrencyTextField.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArbitrageGUI.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fxml/ArbitrageGUI.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file leaf-file-name="Broker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/analyzing/Broker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1156">
-              <caret line="79" column="30" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="30" />
+            <state relative-caret-position="234">
+              <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoopIterator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/analyzing/LoopIterator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Currency.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/data/Currency.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1010">
+              <caret line="112" column="46" selection-start-line="112" selection-start-column="46" selection-end-line="112" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -124,8 +108,8 @@
       <file leaf-file-name="FileProcessor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/data/FileProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3307">
-              <caret line="14" column="22" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="22" />
+            <state relative-caret-position="554">
+              <caret line="79" selection-start-line="79" selection-end-line="79" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -133,32 +117,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Currency.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/data/Currency.java">
+      <file leaf-file-name="Graph.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/data/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="112" column="46" lean-forward="true" selection-start-line="112" selection-start-column="46" selection-end-line="112" selection-end-column="46" />
+            <state relative-caret-position="53">
+              <caret line="52" column="42" lean-forward="true" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#190#191#0" expanded="true" />
+                <element signature="e#234#235#0" expanded="true" />
+                <element signature="e#286#287#0" expanded="true" />
+                <element signature="e#342#343#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Path.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/analyzing/Path.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+            <state relative-caret-position="-104">
+              <caret line="95" column="9" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -207,6 +186,7 @@
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\Hugo\Documents\Algorytmy i Struktury Danych\Projekt Indywidualny\2018Z_AISD_proj_ind_gr10\Arbitrage\src\tests</dir>
+      <dir>C:\Users\Hugo\Documents\Algorytmy i Struktury Danych\Projekt Indywidualny\2018Z_AISD_proj_ind_gr10\Arbitrage</dir>
     </dirStrings>
   </component>
   <component name="FindManager">
@@ -224,10 +204,8 @@
         <option value="$PROJECT_DIR$/src/analyzing/FinancialAnalyst.java" />
         <option value="$PROJECT_DIR$/src/data/Offer.java" />
         <option value="$PROJECT_DIR$/src/analyzing/LoopIterator.java" />
-        <option value="$PROJECT_DIR$/src/data/Graph.java" />
         <option value="$PROJECT_DIR$/src/GUI/Main.java" />
         <option value="$PROJECT_DIR$/src/tests/FileProcessorTests.java" />
-        <option value="$PROJECT_DIR$/src/tests/data/FileProcessorTest.java" />
         <option value="$PROJECT_DIR$/src/analyzing/Broker.java" />
         <option value="$PROJECT_DIR$/src/analyzing/Path.java" />
         <option value="$PROJECT_DIR$/src/data/Currency.java" />
@@ -235,7 +213,10 @@
         <option value="$PROJECT_DIR$/src/textInput/CreditTextField.java" />
         <option value="$PROJECT_DIR$/src/textInput/CurrencyTextField.java" />
         <option value="$PROJECT_DIR$/src/fxml/ArbitrageGUI.fxml" />
+        <option value="$PROJECT_DIR$/src/tests/data/FileProcessorTest.java" />
+        <option value="$PROJECT_DIR$/src/tests/analyzing/BrokerTest.java" />
         <option value="$PROJECT_DIR$/src/GUI/Controller.java" />
+        <option value="$PROJECT_DIR$/src/data/Graph.java" />
       </list>
     </option>
   </component>
@@ -253,55 +234,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
-            <path>
-              <item name="Arbitrage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Arbitrage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Arbitrage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Arbitrage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Arbitrage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Arbitrage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="analyzing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Arbitrage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Arbitrage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Arbitrage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Arbitrage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="fxml" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Arbitrage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Arbitrage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Arbitrage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Arbitrage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="testFiles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Arbitrage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Arbitrage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="textInput" type="462c0819:PsiDirectoryNode" />
-            </path>
             <path>
               <item name="Arbitrage" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
@@ -310,8 +248,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -340,6 +276,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="analyzing" />
       <recent name="data" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -530,34 +467,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_Arbitrage - 2018.11.28 at 10h 17m 56s.xml">
+    <history-entry file="All_in_Arbitrage - 2018.11.28 at 21h 33m 37s.xml">
       <configuration name="All in Arbitrage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Arbitrage - 2018.11.28 at 10h 18m 26s.xml">
+    <history-entry file="All_in_Arbitrage - 2018.11.28 at 21h 34m 34s.xml">
       <configuration name="All in Arbitrage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Arbitrage - 2018.11.28 at 10h 18m 42s.xml">
+    <history-entry file="All_in_Arbitrage - 2018.11.28 at 21h 40m 49s.xml">
       <configuration name="All in Arbitrage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Arbitrage - 2018.11.28 at 10h 19m 28s.xml">
+    <history-entry file="All_in_Arbitrage - 2018.11.28 at 21h 43m 09s.xml">
       <configuration name="All in Arbitrage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Arbitrage - 2018.11.28 at 10h 19m 38s.xml">
+    <history-entry file="All_in_Arbitrage - 2018.11.28 at 21h 47m 55s.xml">
       <configuration name="All in Arbitrage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Arbitrage - 2018.11.28 at 10h 20m 12s.xml">
+    <history-entry file="All_in_Arbitrage - 2018.11.28 at 21h 50m 34s.xml">
       <configuration name="All in Arbitrage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Arbitrage - 2018.11.28 at 10h 21m 46s.xml">
+    <history-entry file="All_in_Arbitrage - 2018.11.28 at 21h 52m 08s.xml">
       <configuration name="All in Arbitrage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Arbitrage - 2018.11.28 at 10h 23m 16s.xml">
+    <history-entry file="All_in_Arbitrage - 2018.11.28 at 21h 52m 45s.xml">
       <configuration name="All in Arbitrage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Arbitrage - 2018.11.28 at 10h 23m 44s.xml">
+    <history-entry file="All_in_Arbitrage - 2018.11.28 at 21h 53m 17s.xml">
       <configuration name="All in Arbitrage" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Arbitrage - 2018.11.28 at 10h 29m 19s.xml">
+    <history-entry file="All_in_Arbitrage - 2018.11.28 at 21h 59m 16s.xml">
       <configuration name="All in Arbitrage" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -577,11 +514,12 @@
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50073206" side_tool="true" weight="0.3290938" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49926794" weight="0.057233706" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49926794" visible="true" weight="0.2718601" />
       <window_info anchor="bottom" id="Terminal" order="13" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.16983895" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.16983895" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49926794" weight="0.25596184" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
@@ -592,7 +530,6 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49926794" weight="0.25596184" />
       <window_info anchor="bottom" id="Changes" order="7" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Profiler" order="9" />
@@ -839,34 +776,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/analyzing/FinancialAnalyst.java" />
     <entry file="file://$PROJECT_DIR$/src/tests/FileProcessorTests.java" />
-    <entry file="file://$PROJECT_DIR$/src/tests/data/FileProcessorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyzing/LoopIterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="79" column="15" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#190#191#0" expanded="true" />
-            <element signature="e#234#235#0" expanded="true" />
-            <element signature="e#286#287#0" expanded="true" />
-            <element signature="e#342#343#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/textInput/CreditTextField.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
@@ -883,40 +792,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/textInput/CurrencyTextField.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="29" />
+        <state relative-caret-position="136">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="29" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxml/ArbitrageGUI.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="18" column="67" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/Offer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyzing/Broker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="79" column="30" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -927,10 +811,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/Currency.java">
+    <entry file="file://$PROJECT_DIR$/src/tests/data/FileProcessorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="112" column="46" lean-forward="true" selection-start-line="112" selection-start-column="46" selection-end-line="112" selection-end-column="46" />
+        <state relative-caret-position="-316">
+          <caret line="25" column="94" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/analyzing/BrokerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="58" column="52" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyzing/LoopIterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyzing/Broker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -939,20 +844,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/data/FileProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3307">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="22" />
+        <state relative-caret-position="554">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/Offer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="12" column="45" lean-forward="true" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        <state relative-caret-position="-104">
+          <caret line="95" column="9" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/Currency.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1010">
+          <caret line="112" column="46" selection-start-line="112" selection-start-column="46" selection-end-line="112" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="52" column="42" lean-forward="true" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#190#191#0" expanded="true" />
+            <element signature="e#234#235#0" expanded="true" />
+            <element signature="e#286#287#0" expanded="true" />
+            <element signature="e#342#343#0" expanded="true" />
           </folding>
         </state>
       </provider>

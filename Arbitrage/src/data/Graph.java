@@ -75,10 +75,4 @@ public class Graph {
         }
     }
 
-    public void writeOutCurrencies() {
-        for (Currency c : toArrayList()) {
-            System.out.println(c.getShortName());
-        }
-    }
-
 }
