@@ -16,3 +16,4 @@
 12. Dodałem loop iterator żeby w kółko chodzić
 13. Path pozmieniałem
 14. Redundant Financial Analyst
+15. Dodano klase Control

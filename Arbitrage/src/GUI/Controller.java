@@ -18,12 +18,6 @@ public class Controller {
     @FXML
     CheckBox dataCheckBox;
     @FXML
-    CheckBox fromCheckBox;
-    @FXML
-    CheckBox toCheckBox;
-    @FXML
-    CheckBox creditCheckBox;
-    @FXML
     CurrencyTextField toTextField;
     @FXML
     CurrencyTextField fromTextField;
@@ -49,7 +43,7 @@ public class Controller {
 
         resultTextArea.setText("Reading the file...");
         if (fileProcessor.checkFileAndMakeGraph(file)) {
-            resultTextArea.setText(resultTextArea.getText() + "\nPoprawny plik. Obecna linia to: " + fileProcessor.getCurrentLineNumber());
+            resultTextArea.setText(resultTextArea.getText() + "\nCorrect file. Latest read line: " + fileProcessor.getCurrentLineNumber());
             dataCheckBox.setSelected(true);
 
             graph = fileProcessor.getGraph();

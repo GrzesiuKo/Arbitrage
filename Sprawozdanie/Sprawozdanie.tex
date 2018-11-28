@@ -71,8 +71,9 @@ Na podstawie tego pliku oraz kwoty wejściowej program miał znajdować dowolny 
 \section{Wysoko abstrakcyjny opis działania algorytmu}
 \begin{enumerate}
 \item Algorytm pobiera dane od użytkownika (w zależności od zadania są to dane opisane w sekcji 2).
-\item Na podstawie tych danych algorytm tworzy graf walut, gdzie każda waluta zawiera możliwości jej wymiany na inną.
+\item Na podstawie tych danych algorytm tworzy graf walut, gdzie każda waluta zawiera możliwości jej wymiany na inną walutę.
 \item Algorytm przechodzi kilkukrotnie po wszystkich walutach i możliwych wymianach (według algorytmu Bellmana-Forda) dokonując obliczeń wymiany określonej kwoty.
+\item Jeśli znajdzie korzystniejszą ścieżkę dotarcia do węzła to aktualizuje jego dane.
 \item W każdej walucie pozostawia największą kwotę oraz ścieżkę wymiany, którą można uzyskać z dotarcia do tej waluty od waluty początkowej.
 \item W zależności od zadania:
 \begin{enumerate}
@@ -88,7 +89,58 @@ Na podstawie tego pliku oraz kwoty wejściowej program miał znajdować dowolny 
 \item Algorytm wyświetla użytkownikowi wyniki swojej pracy.
 \end{enumerate}
 \noindent\linia
-\section{ Efekty działania programu}
+\section{Efekty działania programu}
+W wyniku pracy programu pojawiają się następujące sytuacje:
+\begin{enumerate}
+\item Poprawne wczytanie pliku.
+\begin{center}
+\includegraphics[width = 7cm]{DobryPlikWprowadzenie}
+\end{center}
+\item Niezgodność ze wzorem w pliku.
+\begin{center}
+\includegraphics[width = 7cm]{badfilepattern}
+\end{center}
+\item Niepoprawny format pliku.
+\begin{center}
+\includegraphics[width = 7cm]{badPlik}
+\end{center}
+\item Wybór pliku po naciśnięciu \textit{Choose File}.
+\begin{center}
+\includegraphics[width = 10cm]{filechooser}
+\end{center}
+\item Znalezienie arbitrażu.
+\begin{center}
+\includegraphics[width = 7cm]{DobryArbitrage}
+\end{center}
+\item Nie podano danych do wymiany lub arbitrażu.
+\begin{center}
+\includegraphics[width = 7cm]{NiePodanoDanych}
+\end{center}
+\item Znalezienie wymiany.
+\begin{center}
+\includegraphics[width = 7cm]{DobraWymiana}
+\end{center}
+\item Podano za mało danych.
+\begin{center}
+\includegraphics[width = 7cm]{ZaMaloDanych}
+\end{center}
+\item Nie podano pliku.
+\begin{center}
+\includegraphics[width = 7cm]{nofilegiven}
+\end{center}
+\item Nie znaleziono arbitrażu.
+\begin{center}
+\includegraphics[width = 7cm]{noarbitrage}
+\end{center}
+\item Nie znaleziono wymiany.
+\begin{center}
+\includegraphics[width = 7cm]{noexchange}
+\end{center}
+\item Nie ma takiej waluty.
+\begin{center}
+\includegraphics[width = 7cm]{nocurrency}
+\end{center}
+\end{enumerate}
 \noindent\linia
 \section{Zmiany względem specyfikacji}
 \begin{enumerate}
@@ -112,7 +164,7 @@ Zmiana ta pozwala uniknąć podwójnego czytania pliku. W trakcie jednego czytan
 
 \item Możliwa kwota wejściowa została ograniczona do prawie 10 miliardów (9 999 999 999,99).
 
-Jest to arbitralnie przyjęta \textit{wystarczająco duża kwota} nieprzekraczająca zarobków przeciętnego obywatela i pozwalająca większości użytkowników swobodnie korzystać z funkcji programu.
+Jest to arbitralnie przyjęta \textit{wystarczająco duża kwota} nie mniejsza od zarobków przeciętnego obywatela i~pozwalająca większości użytkowników swobodnie korzystać z funkcji programu.
 
 \item Do \textit{FileProcessor} dodano pole \textit{repeatedCurrency}.
 
@@ -130,13 +182,18 @@ Powstała, aby uporządkować metody do operacji na mapie walut (\textit{currenc
 Pozwala to na równoczesne znajdywanie ścieżki wymiany oraz kwoty docelowej.
 \item Dodano klase \textit{LoopIterator}.
 
-Klasa ta poprawia czytelność iteracji po węzłach (walutach) w sposób zgodny z algorytmem Bellmana-Forda (kiedy iterator dochodzi do końca tablicy wskazuje na jej zerowy element, co pozwala iterować po tablicy \textit{w obiegu zamkniętym}).
+Klasa ta poprawia czytelność iteracji po węzłach (walutach) w sposób zgodny z algorytmem Bellmana-Forda (kiedy iterator dochodzi do końca tablicy wskazuje na jej zerowy element, co pozwala iterować po tablicy \textit{w~obiegu zamkniętym}).
 \item Z uwagi na dodanie listy odwiedzonych węzłów do klasy \textit{Currency},  rola klasy \textit{Path} została zredukowana do nośnika informacji o ścieżce i kwocie końcowej.
 
 \item W trakcie implementacji klasa \textit{FinancialAnalyst} okazała się niepotrzebnie wydzielona i została usunięta, ponieważ wszystkie jej domniemane funkcje spełnia klasa \textit{Broker}.
-\item Zrezygnowano z obiektów \textit{CheckBox} w sekcji 1 oraz 2 okna apliakcji.
+\item Zrezygnowano z obiektów \textit{CheckBox} w sekcji 1 oraz 2 okna aplikacji.
 
-Pola te miały wskazywać czy podano wartości do pól \textit{Credit}, \textit{To}, \textit{From}. Okazało się to niepotrzebne, ponieważ użytkownik jest w stanie zorientować się czy pole zostało wypełnione po samej zawartości pola.
+Obiekty te miały wskazywać, czy podano wartości do pól \textit{Credit}, \textit{To}, \textit{From}. Okazało się to niepotrzebne, ponieważ użytkownik jest w stanie zorientować się, czy pole zostało wypełnione, po samej zawartości pola.
+\item Po poprawnym wczytaniu pliku program wyświetla informacje o walutach i ich możliwych wymianach.
+
+Opcja ta została dodana, aby użytkownik mógł w łatwiejszy sposób sprawdzić jakie wymiany między walutami są dostępne.
+\item Program dostosowany jest do czytania plików o kodowaniu ANSI.
+\item Zostało przyjęte, że nazwy skrócone muszą być pisane wielkimi literami i składać się z 3 liter, dlatego, że jest to ogólnie przyjętym standardem.
 \end{enumerate}
 \noindent\linia
 \section{Podsumowanie i wnioski}
@@ -146,6 +203,16 @@ Zdecydowałem się na algorytm Bellmana-Forda, ponieważ bardzo spodobał mi si�
 
 W swojej implementacji tego algorytmu dokonałem zmiany polegającej na tym, że poszukiwany jest największy koszt dotarcia do węzła po ścieżce bez powtórzeń.
 
+Algorytm prawidłowo wyznaczył ścieżki, we wszystkich przypadkach układu danych jakie testowałem. Poradził sobie zarówno w przypadku zapętlonych wymian jak i braku połączenia między walutami. Prawidłowo wyznaczył ścieżki w przypadku zróżnicowanych kursów i opłat jak i dla przypadku stałych opłat oraz kursów. Podołał w przypadku gęstych połączeń między węzłami jak i rzadkich. Arbitraż znalazł za każdym razem, gdy było to możliwe. Na podstawie przeprowadzonych przeze mnie testów działania algorytmu stwierdzam, że program działa prawidłowo.
+
+
+Wnioski:
+\begin{itemize}
+\item algorytm Bellmana-Forda okazał się bardzo przydatny w realizacji tego zadania, pozwala zaoszczędzić wielu operacji;
+\item ograniczenie nazw skróconych walut, nie pozwoli użytkownikowi na odejście od ogólnie przyjętych standardów oraz program przestanie być aktualny, jeśli standardy te ulegną zmianom;
+\item algorytm jest uzależniony od osobliwego wzoru pliku, wartościową opcją rozwoju byłoby dodanie mu możliwość czytania plików w popularnym formacie jak np. JSON;
+\item jednoczesne czytanie pliku oraz tworzenie grafu pozwala zaoszczędzić czas pracy programu, jednak utrudnia wymianę części programu odpowiedzialnej za tworzenie grafu bądź tej zajmującej się walidacją pliku.   
+\end{itemize}
 
 \noindent\linia
 

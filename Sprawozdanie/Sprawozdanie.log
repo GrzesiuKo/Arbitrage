@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  28 NOV 2018 18:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  28 NOV 2018 20:41
 entering extended mode
 **./Sprawozdanie.tex
 (Sprawozdanie.tex
@@ -674,30 +674,121 @@ Overfull \hbox (14.31746pt too wide) in paragraph at lines 75--76
 tach i mo»-li-wych wy-mia-nach (we-dªug al-go-rytmu Bellmana-
  []
 
-[1] [2] 
+[1]
+<DobryPlikWprowadzenie.png, id=15, 229.60782pt x 353.82187pt>
+File: DobryPlikWprowadzenie.png Graphic file (type png)
+<use DobryPlikWprowadzenie.png>
+Package pdftex.def Info: DobryPlikWprowadzenie.png  used on input line 97. on i
+nput line 97.
+Package pdftex.def Info: Requested size: 199.16928pt x 306.93172pt on input lin
+e 97.
+<badfilepattern.png, id=16, 234.8775pt x 353.06906pt>
+File: badfilepattern.png Graphic file (type png)
+<use badfilepattern.png>
+Package pdftex.def Info: badfilepattern.png  used on input line 101. on input l
+ine 101.
+Package pdftex.def Info: Requested size: 199.16928pt x 299.39359pt on input lin
+e 101.
+ [2 <./DobryPlikWprowadzenie.png>]
+<badPlik.png, id=20, 233.37187pt x 357.58594pt>
+File: badPlik.png Graphic file (type png)
+<use badPlik.png>
+Package pdftex.def Info: badPlik.png  used on input line 105. on input line 105
+.
+Package pdftex.def Info: Requested size: 199.16928pt x 305.19351pt on input lin
+e 105.
+<filechooser.png, id=21, 557.83406pt x 420.06938pt>
+File: filechooser.png Graphic file (type png)
+<use filechooser.png>
+Package pdftex.def Info: filechooser.png  used on input line 109. on input line
+ 109.
+Package pdftex.def Info: Requested size: 284.52756pt x 214.2646pt on input line
+ 109.
+ [3 <./badfilepattern.png> <./badPlik.png>]
+<DobryArbitrage.png, id=25, 233.37187pt x 355.3275pt>
+File: DobryArbitrage.png Graphic file (type png)
+<use DobryArbitrage.png>
+Package pdftex.def Info: DobryArbitrage.png  used on input line 113. on input l
+ine 113.
+Package pdftex.def Info: Requested size: 199.16928pt x 303.26596pt on input lin
+e 113.
+<NiePodanoDanych.png, id=26, 234.8775pt x 352.31625pt>
+File: NiePodanoDanych.png Graphic file (type png)
+<use NiePodanoDanych.png>
+Package pdftex.def Info: NiePodanoDanych.png  used on input line 117. on input 
+line 117.
+Package pdftex.def Info: Requested size: 199.16928pt x 298.75522pt on input lin
+e 117.
+ [4 <./filechooser.png> <./DobryArbitrage.png>]
+<DobraWymiana.png, id=30, 232.61906pt x 355.3275pt>
+File: DobraWymiana.png Graphic file (type png)
+<use DobraWymiana.png>
+Package pdftex.def Info: DobraWymiana.png  used on input line 121. on input lin
+e 121.
+Package pdftex.def Info: Requested size: 199.16928pt x 304.2419pt on input line
+ 121.
+<ZaMaloDanych.png, id=31, 234.1247pt x 356.0803pt>
+File: ZaMaloDanych.png Graphic file (type png)
+<use ZaMaloDanych.png>
+Package pdftex.def Info: ZaMaloDanych.png  used on input line 125. on input lin
+e 125.
+Package pdftex.def Info: Requested size: 199.16928pt x 302.93048pt on input lin
+e 125.
+ [5 <./NiePodanoDanych.png> <./DobraWymiana.png>]
+<nofilegiven.png, id=35, 233.37187pt x 356.0803pt>
+File: nofilegiven.png Graphic file (type png)
+<use nofilegiven.png>
+Package pdftex.def Info: nofilegiven.png  used on input line 129. on input line
+ 129.
+Package pdftex.def Info: Requested size: 199.16928pt x 303.9085pt on input line
+ 129.
+<noarbitrage.png, id=36, 231.86626pt x 351.56343pt>
+File: noarbitrage.png Graphic file (type png)
+<use noarbitrage.png>
+Package pdftex.def Info: noarbitrage.png  used on input line 133. on input line
+ 133.
+Package pdftex.def Info: Requested size: 199.16928pt x 301.99532pt on input lin
+e 133.
+ [6 <./ZaMaloDanych.png> <./nofilegiven.png>]
+<noexchange.png, id=41, 231.11343pt x 353.82187pt>
+File: noexchange.png Graphic file (type png)
+<use noexchange.png>
+Package pdftex.def Info: noexchange.png  used on input line 137. on input line 
+137.
+Package pdftex.def Info: Requested size: 199.16928pt x 304.91794pt on input lin
+e 137.
+<nocurrency.png, id=42, 234.8775pt x 354.57469pt>
+File: nocurrency.png Graphic file (type png)
+<use nocurrency.png>
+Package pdftex.def Info: nocurrency.png  used on input line 141. on input line 
+141.
+Package pdftex.def Info: Requested size: 199.16928pt x 300.67033pt on input lin
+e 141.
+ [7 <./noarbitrage.png> <./noexchange.png>] [8 <./nocurrency.png>] [9]
+
 AED: lastpage setting LastPage
-[3] (Sprawozdanie.aux) ) 
+[10] (Sprawozdanie.aux) ) 
 Here is how much of TeX's memory you used:
- 3315 strings out of 493312
- 47011 string characters out of 3130263
- 118227 words of memory out of 3000000
- 6778 multiletter control sequences out of 15000+200000
+ 3376 strings out of 493312
+ 48223 string characters out of 3130263
+ 118229 words of memory out of 3000000
+ 6826 multiletter control sequences out of 15000+200000
  40580 words of font info for 34 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,43p,874b,415s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts/
-enc/dvips/lm/lm-mathsy.enc}{C:/Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/enc/dvips/lm/lm-ec.enc}<C:/Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/lm/lmbx10.pfb><C:/Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/lm/lmbx12.pfb><C:/Users/Hugo/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Hugo/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Hugo/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Hugo/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Hugo/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Sprawozdanie.pdf (4 pages, 177506 bytes).
+ 41i,10n,43p,874b,405s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/fonts
+/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/enc/dvips/lm/lm-ec.enc}<C:/Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/lm/lmbx10.pfb><C:/Users/Hugo/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/lm/lmbx12.pfb><C:/Users/Hugo/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Hugo/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Hugo/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Hugo/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Hugo/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb>
+Output written on Sprawozdanie.pdf (11 pages, 327464 bytes).
 PDF statistics:
- 45 PDF objects out of 1000 (max. 8388607)
+ 80 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
