@@ -15,3 +15,4 @@
 11. dodałem liste odwiedzonych do Currency
 12. Dodałem loop iterator żeby w kółko chodzić
 13. Path pozmieniałem
+14. Redundant Financial Analyst

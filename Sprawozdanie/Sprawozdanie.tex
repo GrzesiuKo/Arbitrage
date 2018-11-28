@@ -71,7 +71,8 @@ Na podstawie tego pliku oraz kwoty wejściowej program miał znajdować dowolny 
 \section{Wysoko abstrakcyjny opis działania algorytmu}
 \begin{enumerate}
 \item Algorytm pobiera dane od użytkownika (w zależności od zadania są to dane opisane w sekcji 2).
-\item Algorytm przechodzi kilkukrotnie po wszystkich walutach i możliwych wymianach dokonując obliczeń na kwocie wejściowej.
+\item Na podstawie tych danych algorytm tworzy graf walut, gdzie każda waluta zawiera możliwości jej wymiany na inną.
+\item Algorytm przechodzi kilkukrotnie po wszystkich walutach i możliwych wymianach (według algorytmu Bellmana-Forda) dokonując obliczeń wymiany określonej kwoty.
 \item W każdej walucie pozostawia największą kwotę oraz ścieżkę wymiany, którą można uzyskać z dotarcia do tej waluty od waluty początkowej.
 \item W zależności od zadania:
 \begin{enumerate}
@@ -90,9 +91,61 @@ Na podstawie tego pliku oraz kwoty wejściowej program miał znajdować dowolny 
 \section{ Efekty działania programu}
 \noindent\linia
 \section{Zmiany względem specyfikacji}
+\begin{enumerate}
+\item Zmiana nazwy metody:
+\begin{enumerate}
+\item \textit{calculateProfitPath} na \textit{calculateArbitrage},
+\item \textit{calculateExchangePath} na \textit{calculateExchange},
+\item \textit{checkOfferLine} na \textit{checkRateLine}.
+\end{enumerate}.
+Zmiany te poprawiają czytelność kodu.
 
+\item Zamiast jednej klasy \textit{GUI} powstał pakiet dwóch klas: \textit{Controller} i \textit{Main}.
+
+Poprawia to czytelność kodu i wyodrębnia do klasy \textit{Controller} obsługę okna aplikacji.
+
+\item Funkcjonalności klas \textit{FileChecker} i \textit{FileProcessor} zostały połączone w jedną klasę \textit{FileProcessor}.
+
+Zmiana ta pozwala uniknąć podwójnego czytania pliku. W trakcie jednego czytania algorytm sprawdza jego poprawność oraz przetwarza zawarte w nim dane na graf.
+
+\item Do obliczeń najkorzystniejszej ścieżki wymiany została dołączona także kwota początkowa.
+
+\item Możliwa kwota wejściowa została ograniczona do prawie 10 miliardów (9 999 999 999,99).
+
+Jest to arbitralnie przyjęta \textit{wystarczająco duża kwota} nieprzekraczająca zarobków przeciętnego obywatela i pozwalająca większości użytkowników swobodnie korzystać z funkcji programu.
+
+\item Do \textit{FileProcessor} dodano pole \textit{repeatedCurrency}.
+
+Ułatwia to przekazywanie użytkownikowi informacji o powtórzonej deklaracji tej samej waluty.
+
+\item Do klasy \textit{Currency} dodano pole \textit{fullName} reprezentujące pełną nazwę waluty.
+
+Pole to nie jest obecnie wykorzystywane, pozostaje w kodzie, ponieważ w przyszłości może okazać się przydatne do rozbudowy programu. Jest ono uzupełniane prawidłowymi wartościami z pliku wejściowego.
+
+\item Została wydzielona klasa \textit{Graph}.
+
+Powstała, aby uporządkować metody do operacji na mapie walut (\textit{currencies}), co poprawia czytelność kodu oraz łatwość korzystania z tych metod.
+\item Do klasy \textit{Currency} dodano listę odwiedzonych walut.
+
+Pozwala to na równoczesne znajdywanie ścieżki wymiany oraz kwoty docelowej.
+\item Dodano klase \textit{LoopIterator}.
+
+Klasa ta poprawia czytelność iteracji po węzłach (walutach) w sposób zgodny z algorytmem Bellmana-Forda (kiedy iterator dochodzi do końca tablicy wskazuje na jej zerowy element, co pozwala iterować po tablicy \textit{w obiegu zamkniętym}).
+\item Z uwagi na dodanie listy odwiedzonych węzłów do klasy \textit{Currency},  rola klasy \textit{Path} została zredukowana do nośnika informacji o ścieżce i kwocie końcowej.
+
+\item W trakcie implementacji klasa \textit{FinancialAnalyst} okazała się niepotrzebnie wydzielona i została usunięta, ponieważ wszystkie jej domniemane funkcje spełnia klasa \textit{Broker}.
+\item Zrezygnowano z obiektów \textit{CheckBox} w sekcji 1 oraz 2 okna apliakcji.
+
+Pola te miały wskazywać czy podano wartości do pól \textit{Credit}, \textit{To}, \textit{From}. Okazało się to niepotrzebne, ponieważ użytkownik jest w stanie zorientować się czy pole zostało wypełnione po samej zawartości pola.
+\end{enumerate}
 \noindent\linia
 \section{Podsumowanie i wnioski}
+Na implementacje algorytmu, wyszukującego arbitraż lub najkorzystniejsze wymiany walut miałem kilka pomysłów. Najbardziej oczywistym rozwiązaniem wydawało się zastosowanie algorytmu BFS albo DFS w celu odnalezienia wszystkich możliwych dróg w grafie między zadanymi walutami, a następnie wybranie tej najkorzystniejszej. Przed zastosowaniem jednego z tych algorytmów powstrzymywał mnie fakt, że znajdywanie wszystkich możliwych ścieżek w grafie wydawało mi się skrajnie nieefektywne, czasochłonne i niepotrzebne.
+
+Zdecydowałem się na algorytm Bellmana-Forda, ponieważ bardzo spodobał mi się fakt, że po jednym jego wykonaniu wszystkie węzły zawierają informacje o koszcie dotarcia do nich. Dzięki temu użytkownik po ustaleniu waluty początkowej, może następnie dowolną ilość razy zmieniać walutę docelową, a algorytm i tak wykona operacje poszukiwania (ustawiania kosztów w grafie) tylko jeden raz. Przy każdym kolejnym żądaniu (dla tej samej waluty początkowej), będzie tylko pobierał z węzłów (walut) określone już ścieżki i kwoty. Decyzja ta oparta była również na moim osobistym przekonaniu, że przeciętny użytkownik jest w posiadaniu mniejszej ilości walut niż ilość tych walut, na które potencjalnie chciałby wymienić swoje pieniądze, czyli częściej będzie zmieniał walutę docelową niż wejściową.
+
+W swojej implementacji tego algorytmu dokonałem zmiany polegającej na tym, że poszukiwany jest największy koszt dotarcia do węzła po ścieżce bez powtórzeń.
+
 
 \noindent\linia
 

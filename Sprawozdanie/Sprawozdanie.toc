@@ -5,4 +5,4 @@
 \contentsline {section}{\numberline {3}Wysoko abstrakcyjny opis dzia\IeC {\l }ania algorytmu}{1}
 \contentsline {section}{\numberline {4} Efekty dzia\IeC {\l }ania programu}{2}
 \contentsline {section}{\numberline {5}Zmiany wzgl\IeC {\k e}dem specyfikacji}{2}
-\contentsline {section}{\numberline {6}Podsumowanie i wnioski}{2}
+\contentsline {section}{\numberline {6}Podsumowanie i wnioski}{3}
