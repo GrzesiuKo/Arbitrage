@@ -10,7 +10,6 @@ public class Broker {
     private Graph graph;
 
     private boolean isArbitrage;
-    private double credit;
 
     public Broker(Graph graph) {
         this.graph = graph;
@@ -29,7 +28,6 @@ public class Broker {
             isArbitrage = false;
             rootIndex = 0;
             graph.prepareForNextPathFinding();
-            this.credit = credit;
         } else {
             return null;
         }
@@ -46,7 +44,6 @@ public class Broker {
 
             if (graph.getRoot().getExchangedMoney() > credit) {
                 isArbitrage = true;
-
             } else {
                 rootIndex++;
             }
@@ -68,17 +65,21 @@ public class Broker {
 
         currencies = graph.toArrayList();
 
-        if (currencies != null && currencies.size() > 0 && credit >= 0) {
-            path = null;
+        if (graph.getRoot() == graph.getCurrency(from)) {
+
+            return graph.getCurrency(to).toPath();
+
+        } else if (currencies != null && currencies.size() > 0 && credit >= 0) {
+
             isArbitrage = false;
             graph.prepareForNextPathFinding();
-            this.credit = credit;
+
             root = graph.getCurrency(from);
             root.setExchangedMoney(credit);
-
             root.addVisited(root);
             updateNodes(root);
             graph.setRoot(root);
+
             rootIndex = currencies.indexOf(root);
         } else {
             return null;
@@ -109,38 +110,35 @@ public class Broker {
             iterationNumber = 0;
             root = currencies.get(rootIndex);
             loopIterator = new LoopIterator(rootIndex, currencies.size());
-            hasLoopEnded = false;
         }
 
         while (iterationNumber < currencies.size() - 1) {
             hasChanged = false;
             hasLoopEnded = false;
-            Currency c;
-            System.out.println("Początek iteracji: " + iterationNumber);
-            while (!hasLoopEnded) {
-                c = currencies.get(loopIterator.getIterator());
-                System.out.println("Sprawdzamy walute " + c.getShortName());
-                System.out.println("Jej money to: " + c.getExchangedMoney());
-                if (!c.equals(root) && c.getExchangedMoney() >= 0) {
+            Currency current;
 
-                    if (updateNodes(c)) {
+            while (!hasLoopEnded) {
+                current = currencies.get(loopIterator.getIterator());
+
+                if (!current.equals(root) && current.getExchangedMoney() >= 0) {
+                    if (updateNodes(current)) {
                         hasChanged = true;
                     }
                 }
+
                 if (isArbitrage) {
                     break;
                 }
+
                 loopIterator.next();
                 hasLoopEnded = loopIterator.hasLoopEnded();
             }
+
             if (!hasChanged || isArbitrage) {
                 break;
             }
-            System.out.println("Koniec iteracji: " + iterationNumber);
             iterationNumber++;
         }
-
-        System.out.println("Koniec iteracji: " + iterationNumber);
     }
 
     private boolean updateNodes(Currency source) {
@@ -152,18 +150,25 @@ public class Broker {
         for (Offer o : source.getExchanges()) {
             destination = o.getCurrency();
 
-            System.out.println("\tWchodzimy do sąsiada: " + destination.getShortName());
-
             if (checkIfICanUpdateNode(source, destination)) {
                 hasChanged = updateExchangedMoney(source, o);
-                if (hasChanged) {
-                    System.out.println("\t\tZaktualizowano: " + destination.getShortName() + " " + destination.getExchangedMoney());
-                }
             } else if (destination.equals(graph.getRoot())) {
                 updateExchangedMoney(source, o);
             }
         }
         return hasChanged;
+    }
+
+    private boolean checkIfICanUpdateNode(Currency source, Currency destination) {
+        boolean itWasAlreadyVisited;
+        boolean itWasLastVisited;
+        boolean itIsGoingToLoop;
+
+        itWasAlreadyVisited = destination.hasVisited(source);
+        itWasLastVisited = destination.getLastVisited() == source;
+        itIsGoingToLoop = source.hasVisited(destination);
+
+        return (!itWasAlreadyVisited || itWasLastVisited) && !itIsGoingToLoop;
     }
 
     private boolean updateExchangedMoney(Currency source, Offer offer) {
@@ -185,7 +190,10 @@ public class Broker {
             return false;
         }
 
-        result = ((start * rate) * ((100 - percentCharge)) / 100) - standingCharge;
+        result = start * rate;
+        result *= (100 - percentCharge) / 100;
+        result -= standingCharge;
+
         if (destination.getExchangedMoney() < result) {
             destination.setExchangedMoney(result);
             visited = new ArrayList<>(source.getVisited());
@@ -196,16 +204,5 @@ public class Broker {
         return false;
     }
 
-    private boolean checkIfICanUpdateNode(Currency source, Currency destination){
-        boolean hasAlreadyVisited;
-        boolean itWasLastVisited;
-        boolean isItGoingToLoop;
-
-        hasAlreadyVisited = destination.hasVisited(source);
-        itWasLastVisited = destination.getLastVisited() == source;
-        isItGoingToLoop = source.hasVisited(destination);
-
-        return (!hasAlreadyVisited || itWasLastVisited) && !isItGoingToLoop;
-    }
 
 }

@@ -14,7 +14,6 @@ public class Offer {
     }
 
 
-
     public Currency getCurrency() {
         return currency;
     }
@@ -30,7 +29,8 @@ public class Offer {
     public double getStandingCharge() {
         return standingCharge;
     }
-    public String toString(){
+
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(currency.getShortName()).append("\n").append(rate).append("\n").append(percentCharge).append("\n").append(standingCharge).append("\n");
         return sb.toString();

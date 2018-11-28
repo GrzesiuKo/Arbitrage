@@ -15,36 +15,27 @@ import textInput.CurrencyTextField;
 import java.io.File;
 
 public class Controller {
+    @FXML
+    CheckBox dataCheckBox;
+    @FXML
+    CheckBox fromCheckBox;
+    @FXML
+    CheckBox toCheckBox;
+    @FXML
+    CheckBox creditCheckBox;
+    @FXML
+    CurrencyTextField toTextField;
+    @FXML
+    CurrencyTextField fromTextField;
+    @FXML
+    TextArea resultTextArea;
+    @FXML
+    CreditTextField creditExchangeTextField;
+    @FXML
+    CreditTextField creditArbitrageTextField;
     private Stage stage;
     private FileProcessor fileProcessor;
     private Graph graph;
-
-    @FXML
-    CheckBox dataCheckBox;
-
-    @FXML
-    CheckBox fromCheckBox;
-
-    @FXML
-    CheckBox toCheckBox;
-
-    @FXML
-    CheckBox creditCheckBox;
-
-    @FXML
-    CurrencyTextField toTextField;
-
-    @FXML
-    CurrencyTextField fromTextField;
-
-    @FXML
-    TextArea resultTextArea;
-
-    @FXML
-    CreditTextField creditExchangeTextField;
-
-    @FXML
-    CreditTextField creditArbitrageTextField;
 
     public void chooseFile() {
         FileChooser fileChooser;
@@ -57,7 +48,6 @@ public class Controller {
         File file = fileChooser.showOpenDialog(stage);
 
         resultTextArea.setText("Reading the file...");
-
         if (fileProcessor.checkFileAndMakeGraph(file)) {
             resultTextArea.setText(resultTextArea.getText() + "\nPoprawny plik. Obecna linia to: " + fileProcessor.getCurrentLineNumber());
             dataCheckBox.setSelected(true);
@@ -65,7 +55,7 @@ public class Controller {
             graph = fileProcessor.getGraph();
             fileProcessor.showGraph();
         } else if (fileProcessor.getCurrentLineNumber() == 0) {
-            resultTextArea.setText(resultTextArea.getText() + "\nIncorrect ﬁle. Make sure it's UFT-8 encoding.");
+            resultTextArea.setText(resultTextArea.getText() + "\nIncorrect ﬁle. Make sure it's ANSI encoding.");
         } else {
             resultTextArea.setText(resultTextArea.getText() + "\nIncorrect ﬁle. Line " + fileProcessor.getCurrentLineNumber() + " is wrong. Compare it with the ﬁle pattern.");
         }

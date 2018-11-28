@@ -1,8 +1,6 @@
 package textInput;
 
-import javafx.event.EventHandler;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 
 import java.util.Scanner;
 
@@ -11,12 +9,7 @@ public class CreditTextField extends TextField {
 
     public CreditTextField() {
         charLimit = 13;
-        this.setOnKeyTyped(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                verify();
-            }
-        });
+        this.setOnKeyTyped(event -> verify());
     }
 
     @Override
@@ -28,12 +21,10 @@ public class CreditTextField extends TextField {
         stringBuilder.append(currentText).append(textToReplace);
         newText = stringBuilder.toString();
 
-        System.out.println(newText);
 
-
-        if(newText.matches("(\\d+)(,|\\.)?(\\d){0,2}?") && newText.length()<charLimit-2){
+        if (newText.matches("(\\d+)(,|\\.)?(\\d){0,2}?") && newText.length() < charLimit - 2) {
             super.replaceText(startIndex, endIndex, textToReplace);
-        } else if((containsDigitsCommaAndDigits(newText) && newText.length()<=charLimit) || textToReplace.isEmpty()){
+        } else if ((containsDigitsCommaAndDigits(newText) && newText.length() <= charLimit) || textToReplace.isEmpty()) {
 
             super.replaceText(startIndex, endIndex, textToReplace);
         }
@@ -47,28 +38,24 @@ public class CreditTextField extends TextField {
         }
     }
 
-    private boolean consistsOfDigitsOnly(String text) {
-        return text.matches("(\\d)*");
-    }
-
     public void verify() {
         if (getText().length() > charLimit) {
             setText(getText().substring(0, charLimit));
         }
     }
 
-    public double getDoubleFromString(){
+    public double getDoubleFromString() {
         String text;
         Scanner scanner;
 
         text = getText();
 
-        if (text.matches("\\d*(\\.(\\d+))?") && !text.isEmpty()){
+        if (text.matches("\\d*(\\.(\\d+))?") && !text.isEmpty()) {
             return Double.parseDouble(text);
-        }else if(text.matches("\\d*(,(\\d+))?") && !text.isEmpty()){
+        } else if (text.matches("\\d*(,(\\d+))?") && !text.isEmpty()) {
             scanner = new Scanner(text);
             return scanner.nextDouble();
-        }else{
+        } else {
             return -1;
         }
     }

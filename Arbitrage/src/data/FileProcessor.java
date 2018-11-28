@@ -4,21 +4,20 @@ import javafx.scene.control.TextArea;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class FileProcessor {
-    Graph graph;
-    private int currentLineNumber = 0;
+    data.Graph graph;
     int currentFilePart = 0;
     String repeatedCurrency;
     boolean isRepeatedCurrency;
     TextArea messages;
+    private int currentLineNumber = 0;
 
     public FileProcessor(TextArea communication) {
-        graph = new Graph();
+        graph = new data.Graph();
         messages = communication;
         isRepeatedCurrency = false;
     }
@@ -67,12 +66,10 @@ public class FileProcessor {
         int hashCharIndex;
 
         hashCharIndex = line.indexOf("#");
-if (lineNumber==9){
-    System.out.println(line.indexOf("#"));
-}
+
         if (lineNumber == 1) {
             result = hashCharIndex == 0 || hashCharIndex == 1;
-        } else if (hashCharIndex == 0 || hashCharIndex == 1 ) {
+        } else if (hashCharIndex == 0 || hashCharIndex == 1) {
             currentFilePart++;
             result = true;
 
@@ -160,12 +157,8 @@ if (lineNumber==9){
 
         if (line != null) {
             scanner = new Scanner(line);
-            from = null;
-            to = null;
-            rate = 0;
             charge = 0;
             percent = 0;
-            offer = null;
         } else {
             return;
         }

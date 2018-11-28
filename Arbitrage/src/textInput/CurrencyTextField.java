@@ -1,9 +1,6 @@
 package textInput;
 
-import javafx.event.EventHandler;
-import javafx.scene.Cursor;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 
 public class CurrencyTextField extends TextField {
     int limit;
@@ -11,12 +8,7 @@ public class CurrencyTextField extends TextField {
 
     public CurrencyTextField() {
         limit = 3;
-        this.setOnKeyTyped(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                verify();
-            }
-        });
+        this.setOnKeyTyped(event -> verify());
     }
 
     @Override

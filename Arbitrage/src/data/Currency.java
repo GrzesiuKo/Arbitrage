@@ -2,7 +2,6 @@ package data;
 
 import analyzing.Path;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Currency {
@@ -32,7 +31,7 @@ public class Currency {
 
         for (Offer o : exchanges) {
             result = offer.getCurrency().equals(o.getCurrency());
-            if (result == true){
+            if (result == true) {
                 return true;
             }
         }
@@ -50,7 +49,7 @@ public class Currency {
 
         for (Currency c : this.visited) {
             visited = currency.equals(c);
-            if (visited == true){
+            if (visited == true) {
                 return true;
             }
         }
@@ -99,12 +98,12 @@ public class Currency {
         for (Currency c : visited) {
             sb.append(c.getShortName()).append("->");
         }
-        if (visited.size()>1) {
+        if (visited.size() > 1) {
             sb.delete(sb.toString().length() - 2, sb.toString().length());
             pathWay = sb.toString();
             path.setResultingPath(pathWay);
             path.setResultingCredit(exchangedMoney);
-        }else{
+        } else {
             return null;
         }
 
@@ -117,15 +116,14 @@ public class Currency {
         return getShortName().equals(shortName);
     }
 
-    public Currency getLastVisited(){
+    public Currency getLastVisited() {
         Currency result;
         int size;
 
         size = visited.size();
         result = null;
-//czy oststani to size -2 czy size-1 bo na koncu dodajemy obecny wezeł
-        if (size-2>=0){
-            result = visited.get(size-2);
+        if (size - 2 >= 0) {
+            result = visited.get(size - 2);
         }
         return result;
     }
