@@ -7,9 +7,9 @@ To run the program you need to have at least Java 8 installed.
 ### Prerequisites
 
 1) Download the .zip file.
-2) Navigate to the 'Arbitrage/out/artifacts/Arbitrage_jar.jar' folder and run:
+2) Navigate to the 'Arbitrage/out/artifacts/Arbitrage_jar.jar' folder and double click:
 ```
-java -jar Arbitrage.jar
+Arbitrage.jar
 ```
 ## Running the tests
 
